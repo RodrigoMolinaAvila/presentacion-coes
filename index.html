@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación XII Conferencia Internacional COES Octubre 2025</title>
+<link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+    <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
+    <script src="https://d3js.org/d3-force.v2.min.js"></script>
+    <script src="https://d3js.org/d3-hierarchy.v2.min.js"></script>
+    <script src="https://d3js.org/d3-sankey.v0.10.0.min.js"></script>
+    <script src="https://d3js.org/d3-chord.v2.min.js"></script>
+    <script src="https://d3js.org/d3-brush.v2.min.js"></script>
+    <script src="https://d3js.org/d3-shape.v2.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://d3js.org/d3-selection.v2.min.js"></script>
+    <script src="https://d3js.org/d3-transition.v2.min.js"></script>
+    <script src="https://d3js.org/d3-dispatch.v2.min.js"></script>
+    <script src="https://d3js.org/d3-timer.v2.min.js"></script>
+    <script src="https://d3js.org/d3-ease.v2.min.js"></script>
+    <script src="https://d3js.org/d3-drag.v2.min.js"></script>
+    <script src="https://d3js.org/d3-quadtree.v2.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v2.min.js"></script>
+    <script src="https://d3js.org/d3-format.v2.min.js"></script>
+    <script src="https://d3js.org/d3-time.v2.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
+</head>
+<body class="font-sans tracking-tight antialiased bg-slate-900 text-slate-100">
+    <div id="app" class="min-h-screen flex flex-col overflow-hidden">
+        <div id="slides-wrapper" class="flex-1 relative">
+            <div id="slides-container" class="flex h-full transition-transform duration-700 ease-in-out">
+                <!-- Slides will be injected here -->
+            </div>
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+            <div class="bg-slate-800/90 backdrop-blur-lg rounded-full px-6 py-3 flex items-center gap-6 shadow-2xl border border-slate-700">
+                <button id="prev-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white">
+                    <i data-feather="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <div id="slide-indicator" class="flex items-center gap-3">
+                    <div class="flex gap-1" id="dots-container">
+                        <!-- Dots will be injected here -->
+                    </div>
+                    <span id="slide-counter" class="text-sm text-slate-400 font-mono">1/11</span>
+                </div>
+                <button id="next-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white">
+                    <i data-feather="chevron-right" class="w-5 h-5"></i>
+                </button>
+                <button id="fullscreen-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white ml-2">
+                    <i data-feather="maximize" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Background Graph Visualization -->
+        <div id="background-graph" class="fixed inset-0 pointer-events-none opacity-20">
+            <svg id="bg-svg" class="w-full h-full"></svg>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
