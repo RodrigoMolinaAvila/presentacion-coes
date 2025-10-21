@@ -1,78 +1,1163 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación XII Conferencia Internacional COES Octubre 2025</title>
-<link rel="stylesheet" href="style.css">
+    <title>Think Tanks en Tiempos Turbulentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
-    <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
-    <script src="https://d3js.org/d3-force.v2.min.js"></script>
-    <script src="https://d3js.org/d3-hierarchy.v2.min.js"></script>
-    <script src="https://d3js.org/d3-sankey.v0.10.0.min.js"></script>
-    <script src="https://d3js.org/d3-chord.v2.min.js"></script>
-    <script src="https://d3js.org/d3-brush.v2.min.js"></script>
-    <script src="https://d3js.org/d3-shape.v2.min.js"></script>
-    <script src="https://d3js.org/d3-array.v2.min.js"></script>
-    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
-    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
-    <script src="https://d3js.org/d3-selection.v2.min.js"></script>
-    <script src="https://d3js.org/d3-transition.v2.min.js"></script>
-    <script src="https://d3js.org/d3-dispatch.v2.min.js"></script>
-    <script src="https://d3js.org/d3-timer.v2.min.js"></script>
-    <script src="https://d3js.org/d3-ease.v2.min.js"></script>
-    <script src="https://d3js.org/d3-drag.v2.min.js"></script>
-    <script src="https://d3js.org/d3-quadtree.v2.min.js"></script>
-    <script src="https://d3js.org/d3-collection.v2.min.js"></script>
-    <script src="https://d3js.org/d3-format.v2.min.js"></script>
-    <script src="https://d3js.org/d3-time.v2.min.js"></script>
-    <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
-</head>
-<body class="font-sans tracking-tight antialiased bg-slate-900 text-slate-100">
-    <div id="app" class="min-h-screen flex flex-col overflow-hidden">
-        <div id="slides-wrapper" class="flex-1 relative">
-            <div id="slides-container" class="flex h-full transition-transform duration-700 ease-in-out">
-                <!-- Slides will be injected here -->
-            </div>
-        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Raleway', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    spacing: {
+                        'phi': '1.618rem',
+                        'phi2': '2.618rem',
+                        'phi3': '4.236rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            font-family: 'Raleway', sans-serif;
+        }
         
-        <!-- Navigation Controls -->
-        <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-            <div class="bg-slate-800/90 backdrop-blur-lg rounded-full px-6 py-3 flex items-center gap-6 shadow-2xl border border-slate-700">
-                <button id="prev-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white">
-                    <i data-feather="chevron-left" class="w-5 h-5"></i>
-                </button>
-                <div id="slide-indicator" class="flex items-center gap-3">
-                    <div class="flex gap-1" id="dots-container">
-                        <!-- Dots will be injected here -->
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .golden-grid {
+            display: grid;
+            grid-template-columns: 62% 38%;
+            height: 100%;
+            gap: 1.618rem;
+        }
+        
+        .reverse-golden {
+            grid-template-columns: 38% 62%;
+        }
+        
+        .graph-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .graph-node {
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .focus-element {
+            transition: all 1s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .tooltip {
+            position: absolute;
+            padding: 0.618rem;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 0.382rem;
+            pointer-events: none;
+            font-size: 0.9rem;
+            max-width: 280px;
+            z-index: 100;
+        }
+        
+        .slide-indicator {
+            position: fixed;
+            bottom: 1.618rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.618rem;
+            z-index: 50;
+        }
+        
+        .indicator-node {
+            width: 0.618rem;
+            height: 0.618rem;
+            border-radius: 50%;
+            background: rgba(148, 163, 184, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .indicator-node.active {
+            background: #d3e6fe;
+            transform: scale(1.382);
+        }
+        
+        .navigation-buttons {
+            position: fixed;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 50;
+        }
+        
+        .nav-btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            color: #d3e6fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(51, 65, 85, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .topic-node {
+            stroke: #fff;
+            stroke-width: 2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .topic-node:hover {
+            stroke-width: 3;
+        }
+        
+        .topic-label {
+            font-size: 0.8rem;
+            fill: #fff;
+            font-weight: 500;
+            pointer-events: none;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.618rem;
+            margin-bottom: 0.618rem;
+        }
+        
+        .legend-color {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 3px;
+        }
+        
+        .data-card {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 0.618rem;
+            padding: 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .data-card:hover {
+            transform: translateY(-0.382rem);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .transition-element {
+            transition: all 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            background-image: linear-gradient(45deg, #ffecd2, #fcb69f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            letter-spacing: -0.05em;
+        }
+        
+        @media (max-width: 768px) {
+            .golden-grid, .reverse-golden {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .graph-container {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-200 tracking-tight antialiased">
+    <div class="slides-container" style="position: relative; width: 100vw; height: 100vh;">
+        <!-- Slide 1: Portada -->
+        <div id="slide1" class="slide">
+            <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80'); background-size: cover;"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-sky-900/50 to-indigo-900/50"></div>
+            <div class="container mx-auto h-full flex flex-col items-center justify-center relative z-10">
+                <div class="text-center">
+                    <h1 class="hero-title font-heading font-bold mb-4">Think Tanks en Tiempos Turbulentos</h1>
+                    <h2 class="text-2xl md:text-3xl font-heading opacity-90 mb-6">Chile 2019–2023</h2>
+                    <div class="inline-block bg-slate-800/50 backdrop-blur-sm px-8 py-6 rounded-2xl border border-slate-600/50">
+                        <p class="text-xl md:text-2xl font-medium mb-2">RODRIGO MOLINA ÁVILA</p>
+                        <p class="text-lg opacity-80 mb-4">UCHILE-IDIA-IMFD</p>
+                        <p class="text-xl md:text-2xl font-medium mb-2">MARCOS GONZÁLEZ HERNANDO</p>
+                        <p class="text-lg opacity-80">UDP-COES</p>
                     </div>
-                    <span id="slide-counter" class="text-sm text-slate-400 font-mono">1/11</span>
                 </div>
-                <button id="next-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white">
-                    <i data-feather="chevron-right" class="w-5 h-5"></i>
-                </button>
-                <button id="fullscreen-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white ml-2">
-                    <i data-feather="maximize" class="w-5 h-5"></i>
-                </button>
+                <div class="absolute bottom-8 flex items-center gap-2 animate-bounce">
+                    <p>Desliza para comenzar</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
         </div>
 
-        <!-- Background Graph Visualization -->
-        <div id="background-graph" class="fixed inset-0 pointer-events-none opacity-20">
-            <svg id="bg-svg" class="w-full h-full"></svg>
+        <!-- Slide 2: Intuición inicial -->
+        <div id="slide2" class="slide" style="left: 100vw;">
+            <div class="golden-grid h-full">
+                <div class="graph-container p-4">
+                    <svg id="field-diagram" width="100%" height="100%"></svg>
+                </div>
+                <div class="flex flex-col justify-center px-4">
+                    <h3 class="text-3xl md:text-4xl font-heading font-bold mb-6">Intuición inicial</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-rose-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <span class="text-slate-900 font-bold">1</span>
+                            </div>
+                            <p class="text-lg">Los think tanks son organizaciones <span class="font-bold text-rose-300">híbridas</span> que operan en la intersección de campos—academia, política, medios, financiamiento.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-amber-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <span class="text-slate-900 font-bold">2</span>
+                            </div>
+                            <p class="text-lg">Precisamente por ser híbridos, son <span class="font-bold text-amber-300">sensibles a cambios</span> en su ambiente.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-emerald-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <span class="text-slate-900 font-bold">3</span>
+                            </div>
+                            <p class="text-lg">Esto los vuelve indicadores privilegiados de transformaciones de qué actores producen conocimiento experto, qué lenguajes se consideran legítimos, quién tiene acceso a las plataformas para intervenir en el debate público.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Literatura relevante -->
+        <div id="slide3" class="slide" style="left: 200vw;">
+            <div class="reverse-golden h-full">
+                <div class="flex flex-col justify-center px-4">
+                    <h3 class="text-3xl md:text-4xl font-heading font-bold mb-6">Literatura relevante</h3>
+                    <div class="space-y-6">
+                        <div class="data-card">
+                            <h4 class="text-xl font-heading font-semibold mb-3 text-rose-300">Think tanks como organizaciones híbridas</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-rose-300"></i>
+                                    <span><span class="font-medium">Medvetz 2012</span>: organizaciones que operan en la intersección de campos (academia, política, medios, economía)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-rose-300"></i>
+                                    <span>Traducen capitales y lógicas entre estos campos, tienen una función de 'brokers' (Stone)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-rose-300"></i>
+                                    <span>¿Qué pasa cuando los campos mismos se desestabilizan? (Dobry)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h4 class="text-xl font-heading font-semibold mb-3 text-amber-300">Literatura chilena—lo que sabemos y los vacíos</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-amber-300"></i>
+                                    <span>Dictadura y transición bien estudiadas (Puryear, Silva, Gárate), o bien estudios de caso (Morales, Jara)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-amber-300"></i>
+                                    <span>Poco sobre ciclos de vida durante crisis recientes (señalado por Cociña & Toro)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-amber-300"></i>
+                                    <span>Excepciones parciales: Alenda 2020, Dávila 2020, Cortés et al. 2023</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h4 class="text-xl font-heading font-semibold mb-3 text-emerald-300">Marco conceptual tentativo: infraestructura intelectual</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-emerald-300"></i>
+                                    <span>Condiciones materiales e institucionales que permiten intervenciones</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-circle text-xs mt-1.5 mr-2 text-emerald-300"></i>
+                                    <span>En Chile: financiamiento concentrado, medios oligopolizados, poco financiamiento internacional</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph-container p-4">
+                    <svg id="knowledge-graph" width="100%" height="100%"></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Preguntas de investigación -->
+        <div id="slide4" class="slide" style="left: 300vw;">
+            <div class="container mx-auto h-full flex flex-col items-center justify-center relative">
+                <h3 class="text-4xl md:text-5xl font-heading font-bold mb-10 text-center">Preguntas de investigación</h3>
+                
+                <div class="w-full max-w-3xl space-y-8">
+                    <div class="focus-element text-2xl md:text-3xl p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 opacity-40 transition-all duration-1000">
+                        ¿Cómo evolucionó la <span class="font-bold text-rose-300">producción</span> de think tanks entre 2019-2023? (volumen, frecuencia)
+                    </div>
+                    
+                    <div class="focus-element text-2xl md:text-3xl p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 opacity-40 transition-all duration-1000">
+                        ¿Qué <span class="font-bold text-amber-300">temas</span> dominaron y cómo cambiaron? (agenda temática)
+                    </div>
+                    
+                    <div class="focus-element text-2xl md:text-3xl p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 opacity-40 transition-all duration-1000">
+                        ¿Convergieron o <span class="font-bold text-emerald-300">divergieron</span> semánticamente? (lenguajes compartidos vs. fragmentación)
+                    </div>
+                    
+                    <div class="focus-element text-2xl md:text-3xl p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 opacity-40 transition-all duration-1000">
+                        ¿Qué nos dicen estos patrones sobre cómo se organiza la <span class="font-bold text-indigo-300">expertise</span> durante transformación institucional en Chile?
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Datos y métodos -->
+        <div id="slide5" class="slide" style="left: 400vw;">
+            <div class="golden-grid h-full">
+                <div class="graph-container p-4">
+                    <svg id="data-viz" width="100%" height="100%"></svg>
+                </div>
+                <div class="flex flex-col justify-center px-4">
+                    <h3 class="text-3xl md:text-4xl font-heading font-bold mb-6">Datos y métodos</h3>
+                    <div class="space-y-5">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <i class="fas fa-database text-slate-900"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium">29 think tanks</h4>
+                                <p class="opacity-80">&gt;17,000 intervenciones, 2019–2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-purple-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <i class="fas fa-layer-group text-slate-900"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium">Niveles de análisis</h4>
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li><span class="font-medium text-blue-300">Nivel 1:</span> Volumen de publicaciones y análisis descriptivo temporal</li>
+                                    <li><span class="font-medium text-purple-300">Nivel 2:</span> Análisis temático y semántico (BERTopic & SBERT)</li>
+                                    <li><span class="font-medium text-pink-300">Nivel 3:</span> Zoom in (BERT+) - Clustering y trayectorias temporales</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-pink-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <i class="fas fa-lightbulb text-slate-900"></i>
+                            </div>
+                            <div>
+                                <p class="italic">"El corpus, con sus limitaciones, es un proxy importante de la producción de intervenciones de 'opinión' y generación de evidencia 'experta' en políticas públicas en Chile"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Webscraping -->
+        <div id="slide6" class="slide" style="left: 500vw;">
+            <div class="reverse-golden h-full">
+                <div class="flex flex-col justify-center px-4">
+                    <h3 class="text-3xl md:text-4xl font-heading font-bold mb-6">Webscraping</h3>
+                    <div class="space-y-6">
+                        <div class="data-card">
+                            <h4 class="text-xl font-heading font-semibold mb-3 text-blue-300">Proceso de recolección</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mt-1 mr-2 text-blue-300"></i>
+                                    <span>Automatización de recolección de datos de múltiples fuentes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mt-1 mr-2 text-blue-300"></i>
+                                    <span>Análisis de frecuencias y temporalidad</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mt-1 mr-2 text-blue-300"></i>
+                                    <span>Selección de contenido relevante para análisis</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h4 class="text-xl font-heading font-semibold mb-3 text-purple-300">Fuentes principales</h4>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Centro de Estudios Públicos</span>
+                                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Libertad y Desarrollo</span>
+                                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Fundación Sol</span>
+                                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Espacio Público</span>
+                                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">CIEPLAN</span>
+                                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Horizontal</span>
+                            </div>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h4 class="text-xl font-heading font-semibold mb-3 text-pink-300">Reproducibilidad & Open Science</h4>
+                            <div class="flex items-center gap-3">
+                                <div class="w-16 h-16 flex items-center justify-center bg-gray-800 rounded-lg">
+                                    <i class="fab fa-github text-3xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Todo el código disponible en GitHub</p>
+                                    <p class="text-sm opacity-80">Incluyendo datos y notebooks de análisis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph-container p-4">
+                    <svg id="packing-chart" width="100%" height="100%"></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Nivel 1 -->
+        <div id="slide7" class="slide" style="left: 600vw;">
+            <div class="golden-grid h-full">
+                <div class="graph-container p-4">
+                    <svg id="timeline-chart" width="100%" height="100%"></svg>
+                </div>
+                <div class="flex flex-col justify-center px-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full mb-4">
+                        <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                        <h3 class="text-2xl font-heading font-bold">Nivel 1: Densidad por orientación política</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+                            <h4 class="text-xl font-medium mb-2 text-blue-300">Evolución temporal</h4>
+                            <p>Análisis del volumen de publicaciones según la orientación política de los think tanks durante el período 2019-2023.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+                                <h4 class="text-lg font-medium mb-1 text-emerald-300">Periodos clave</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                                        <span>Estallido social (2019)</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-rose-400"></div>
+                                        <span>Pandemia COVID-19 (2020-2021)</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                                        <span>Proceso constituyente (2021-2022)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+                                <h4 class="text-lg font-medium mb-1 text-purple-300">Orientaciones políticas</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-sm bg-blue-400"></div>
+                                        <span>Centro derecha</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-sm bg-rose-400"></div>
+                                        <span>Izquierda</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-sm bg-emerald-400"></div>
+                                        <span>Centro</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+                            <h4 class="text-lg font-medium mb-1 text-amber-300">Hallazgo inicial</h4>
+                            <p>Picos de publicación coinciden con eventos políticos relevantes en Chile, con variaciones según la orientación del think tank.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Nivel 2 -->
+        <div id="slide8" class="slide" style="left: 700vw;">
+            <div class="container mx-auto h-full flex flex-col py-10">
+                <div class="text-center mb-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full mb-2">
+                        <div class="w-3 h-3 rounded-full bg-purple-400"></div>
+                        <h3 class="text-3xl font-heading font-bold">Nivel 2: NLP (BERTopic + SBERT)</h3>
+                    </div>
+                    <p class="text-lg max-w-2xl mx-auto">Análisis temático y semántico de las intervenciones mediante modelos de lenguaje avanzados</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow">
+                    <div class="data-card flex flex-col">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-blue-300">Preprocesamiento</h4>
+                        <ul class="space-y-2 flex-grow">
+                            <li class="flex items-start">
+                                <i class="fas fa-cog mt-1 mr-2 text-blue-300"></i>
+                                <span>Procesamiento de título + contenido web + documentos asociados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-cog mt-1 mr-2 text-blue-300"></i>
+                                <span>Limpieza de texto y normalización</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-cog mt-1 mr-2 text-blue-300"></i>
+                                <span>Modelo SBERT para embeddings semánticos</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 bg-slate-900/50 p-3 rounded-lg">
+                            <code class="text-xs block whitespace-pre overflow-x-auto">parámetros = {'model': 'paraphrase-multilingual-mpnet-base-v2'}</code>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card flex flex-col">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-purple-300">Similitud Coseno</h4>
+                        <div class="flex-grow">
+                            <p class="mb-3">Métrica para medir la similitud entre documentos en el espacio vectorial:</p>
+                            <div class="bg-slate-900/50 p-4 rounded-lg mb-3">
+                                <div class="text-center font-mono">cos(θ) = (A·B) / (||A|| ||B||)</div>
+                            </div>
+                            <p>Donde A y B son los vectores de embeddings de los documentos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card flex flex-col">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-emerald-300">Resultados preliminares</h4>
+                        <ul class="space-y-2 flex-grow">
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line mt-1 mr-2 text-emerald-300"></i>
+                                <span>Identificación de 15 temas principales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line mt-1 mr-2 text-emerald-300"></i>
+                                <span>Evolución de temas por think tank</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line mt-1 mr-2 text-emerald-300"></i>
+                                <span>Mayor convergencia semántica durante eventos de crisis</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Nivel 3 -->
+        <div id="slide9" class="slide" style="left: 800vw;">
+            <div class="container mx-auto h-full flex flex-col py-10">
+                <div class="text-center mb-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full mb-2">
+                        <div class="w-3 h-3 rounded-full bg-pink-400"></div>
+                        <h3 class="text-3xl font-heading font-bold">Nivel 3: Zoom temático</h3>
+                    </div>
+                    <p class="text-lg max-w-2xl mx-auto">Análisis detallado de tópicos específicos y sus trayectorias temporales</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-grow">
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-blue-300">Reforma Tributaria</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <div class="w-12 h-1 bg-blue-400"></div>
+                            </div>
+                            <span class="text-sm">Centro Derecha</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                <div class="w-8 h-1 bg-rose-400"></div>
+                            </div>
+                            <span class="text-sm">Izquierda</span>
+                        </div>
+                        <p class="text-sm">Mayor discusión durante propuestas legislativas en 2020 y 2022, con divergencias en enfoque según orientación política.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-amber-300">Proceso Constituyente</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <div class="w-16 h-1 bg-blue-400"></div>
+                            </div>
+                            <span class="text-sm">Centro Derecha</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                <div class="w-20 h-1 bg-rose-400"></div>
+                            </div>
+                            <span class="text-sm">Izquierda</span>
+                        </div>
+                        <p class="text-sm">Tópico dominante en 2021-2022 con enfoques contrastantes según orientación política del think tank.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-emerald-300">Sistema de Pensiones</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <div class="w-10 h-1 bg-blue-400"></div>
+                            </div>
+                            <span class="text-sm">Centro Derecha</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                <div class="w-24 h-1 bg-rose-400"></div>
+                            </div>
+                            <span class="text-sm">Izquierda</span>
+                        </div>
+                        <p class="text-sm">Discusión permanente con picos durante proyectos de ley en 2020 y 2022.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-rose-300">Seguridad Ciudadana</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <div class="w-20 h-1 bg-blue-400"></div>
+                            </div>
+                            <span class="text-sm">Centro Derecha</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                <div class="w-12 h-1 bg-rose-400"></div>
+                            </div>
+                            <span class="text-sm">Izquierda</span>
+                        </div>
+                        <p class="text-sm">Aumento progresivo desde 2020, con máxima expresión en 2023.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-purple-300">Educación Superior</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <div class="w-8 h-1 bg-blue-400"></div>
+                            </div>
+                            <span class="text-sm">Centro Derecha</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                <div class="w-16 h-1 bg-rose-400"></div>
+                            </div>
+                            <span class="text-sm">Izquierda</span>
+                        </div>
+                        <p class="text-sm">Discusión estable con énfasis en gratuidad y calidad educativa.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-3 text-indigo-300">Cambio Climático</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <div class="w-6 h-1 bg-blue-400"></div>
+                            </div>
+                            <span class="text-sm">Centro Derecha</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                <div class="w-14 h-1 bg-rose-400"></div>
+                            </div>
+                            <span class="text-sm">Izquierda</span>
+                        </div>
+                        <p class="text-sm">Creciente interés desde 2021, especialmente en think tanks progresistas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Implicancias -->
+        <div id="slide10" class="slide" style="left: 900vw;">
+            <div class="container mx-auto h-full flex flex-col py-10">
+                <h3 class="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Implicancias metodológicas</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-4 text-amber-300">Consideraciones técnicas</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-amber-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-sliders-h text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Hiperparámetros</h5>
+                                    <p class="text-sm opacity-90">Selección óptima requiere pruebas iterativas (BERTopic, UMAP, HDBSCAN)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-amber-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-ban text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Stopwords personalizadas</h5>
+                                    <p class="text-sm opacity-90">Vocabulario específico del contexto chileno y político</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-amber-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-key text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Acceso a datos</h5>
+                                    <p class="text-sm opacity-90">Limitaciones en contenido protegido o eliminado</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-4 text-purple-300">Desafíos interpretativos</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-purple-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-tags text-purple-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Etiquetado de temas</h5>
+                                    <p class="text-sm opacity-90">Validación manual necesaria para nombres de tópicos</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-purple-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-exchange-alt text-purple-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Cambio semántico</h5>
+                                    <p class="text-sm opacity-90">Las palabras pueden cambiar de significado en diferentes contextos políticos</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-purple-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-balance-scale text-purple-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Sesgos en modelos</h5>
+                                    <p class="text-sm opacity-90">Los modelos multilingües pueden tener sesgos culturales y lingüísticos</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="data-card md:col-span-2">
+                        <h4 class="text-xl font-heading font-semibold mb-4 text-blue-300">Recomendaciones</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-slate-900/50 p-4 rounded-lg">
+                                <div class="text-4xl text-center text-blue-300 mb-2">1</div>
+                                <p class="text-center text-sm">Validación constante con expertos en políticas chilenas</p>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-lg">
+                                <div class="text-4xl text-center text-blue-300 mb-2">2</div>
+                                <p class="text-center text-sm">Análisis comparativo de múltiples configuraciones de modelos</p>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-lg">
+                                <div class="text-4xl text-center text-blue-300 mb-2">3</div>
+                                <p class="text-center text-sm">Documentación transparente de limitaciones metodológicas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Conclusiones -->
+        <div id="slide11" class="slide" style="left: 1000vw;">
+            <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1627556704302-624286d60a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover;"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-sky-900/40 to-indigo-900/70"></div>
+            <div class="container mx-auto h-full flex flex-col items-center justify-center relative z-10 py-16">
+                <h3 class="text-4xl md:text-5xl font-heading font-bold mb-8 text-center">Conclusiones</h3>
+                
+                <div class="max-w-4xl w-full space-y-6 backdrop-blur-sm bg-slate-800/50 rounded-3xl p-8 border border-slate-600/30">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-blue-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">1</span>
+                        </div>
+                        <p class="text-xl">Los think tanks chilenos funcionan como <span class="font-bold text-blue-300">sensores privilegiados</span> de cambios en la producción de conocimiento experto durante periodos de turbulencia institucional.</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-amber-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">2</span>
+                        </div>
+                        <p class="text-xl">Identificamos <span class="font-bold text-amber-300">patrones diferenciados</span> en la producción de contenido según orientación política durante eventos críticos (estallido social, pandemia, proceso constituyente).</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-emerald-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">3</span>
+                        </div>
+                        <p class="text-xl">Existe una <span class="font-bold text-emerald-300">polarización temática</span> creciente que refleja la fragmentación del debate público en Chile, con divergencias en los enfoques semánticos.</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-rose-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">4</span>
+                        </div>
+                        <p class="text-xl">La <span class="font-bold text-rose-300">infraestructura intelectual</span> chilena muestra alta concentración de recursos y acceso desigual a plataformas de difusión, condicionando la producción de conocimiento experto.</p>
+                    </div>
+                    
+                    <div class="text-center mt-10">
+                        <a href="#" class="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-heading font-bold text-lg px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500/30">
+                            Acceder al estudio completo
+                        </a>
+                        <p class="mt-4 text-sm opacity-80">Disponible en GitHub con datos y código fuente</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <!-- Slide Indicator -->
+    <div class="slide-indicator">
+        <!-- Indicator nodes will be generated by JS -->
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button id="prev-btn" class="nav-btn">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button id="next-btn" class="nav-btn">
+            <i class="fas fa-arrow-down"></i>
+        </button>
+    </div>
+    
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip invisible"></div>
 
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
     <script>
-        feather.replace();
+        // Initialize D3 color scheme
+        const colors = d3.schemePastel1;
+        
+        // Initialize presentation variables
+        let currentSlide = 0;
+        const totalSlides = 11;
+        const slides = Array.from({length: totalSlides}, (_, i) => document.getElementById(`slide${i+1}`));
+        
+        // Create slide indicator nodes
+        const indicatorContainer = document.querySelector('.slide-indicator');
+        for (let i = 0; i < totalSlides; i++) {
+            const node = document.createElement('div');
+            node.className = 'indicator-node';
+            node.dataset.slide = i;
+            indicatorContainer.appendChild(node);
+        }
+        
+        // Update slide position
+        function updateSlidePosition() {
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(${-currentSlide * 100}vw)`;
+            });
+            
+            // Update indicator nodes
+            document.querySelectorAll('.indicator-node').forEach((node, index) => {
+                if (index === currentSlide) {
+                    node.classList.add('active');
+                } else {
+                    node.classList.remove('active');
+                }
+            });
+        }
+        
+        // Navigate to next slide
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlidePosition();
+            }
+        }
+        
+        // Navigate to previous slide
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlidePosition();
+            }
+        }
+        
+        // Event listeners for buttons
+        document.getElementById('next-btn').addEventListener('click', nextSlide);
+        document.getElementById('prev-btn').addEventListener('click', prevSlide);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Swipe support for touch devices
+        let touchStartX = 0;
+        let touchStartY = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+            
+            // Horizontal swipe
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            // Vertical swipe
+            else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 50) {
+                if (diffY > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+        
+        // Initialize slide position
+        updateSlidePosition();
+        
+        // Create field diagram for Slide 2
+        function createFieldDiagram() {
+            const svg = d3.select("#field-diagram");
+            const width = svg.node().clientWidth;
+            const height = svg.node().clientHeight;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const radius = Math.min(width, height) * 0.3;
+            
+            // Draw central diamond
+            const diamondPoints = [
+                [centerX, centerY - radius * 0.7],
+                [centerX + radius * 0.7, centerY],
+                [centerX, centerY + radius * 0.7],
+                [centerX - radius * 0.7, centerY]
+            ];
+            
+            const diamond = svg.append("polygon")
+                .attr("points", diamondPoints.map(p => p.join(",")).join(" "))
+                .attr("fill", colors[0])
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 2)
+                .attr("stroke-dasharray", "5,5");
+                
+            svg.append("text")
+                .attr("x", centerX)
+                .attr("y", centerY)
+                .attr("text-anchor", "middle")
+                .attr("dominant-baseline", "middle")
+                .attr("fill", "#fff")
+                .attr("font-weight", "bold")
+                .text("Think Tanks");
+            
+            // Define fields data
+            const fields = [
+                { name: "Academia", angle: -Math.PI/2, color: colors[1] },
+                { name: "Política", angle: 0, color: colors[2] },
+                { name: "Economía", angle: Math.PI/2, color: colors[3] },
+                { name: "Medios", angle: Math.PI, color: colors[4] }
+            ];
+            
+            // Draw fields
+            fields.forEach((field, i) => {
+                const x = centerX + Math.cos(field.angle) * radius;
+                const y = centerY + Math.sin(field.angle) * radius;
+                
+                svg.append("rect")
+                    .attr("x", x - radius/2)
+                    .attr("y", y - radius/2)
+                    .attr("width", radius)
+                    .attr("height", radius)
+                    .attr("fill", field.color)
+                    .attr("opacity", 0.7)
+                    .attr("rx", 10)
+                    .on("mouseover", function() {
+                        d3.select(this).attr("opacity", 0.9);
+                    })
+                    .on("mouseout", function() {
+                        d3.select(this).attr("opacity", 0.7);
+                    });
+                
+                svg.append("text")
+                    .attr("x", x)
+                    .attr("y", y)
+                    .attr("text-anchor", "middle")
+                    .attr("dominant-baseline", "middle")
+                    .attr("fill", "#1e293b")
+                    .attr("font-weight", "bold")
+                    .text(field.name);
+            });
+        }
+        
+        // Create knowledge graph for Slide 3
+        function createKnowledgeGraph() {
+            const svg = d3.select("#knowledge-graph");
+            const width = svg.node().clientWidth;
+            const height = svg.node().clientHeight;
+            
+            // Sample data
+            const nodes = [
+                { id: "Medvetz", group: 0, radius: 25 },
+                { id: "Stone", group: 0, radius: 20 },
+                { id: "Dobry", group: 0, radius: 20 },
+                { id: "Puryear", group: 1, radius: 20 },
+                { id: "Silva", group: 1, radius: 22 },
+                { id: "Gárate", group: 1, radius: 20 },
+                { id: "Cociña", group: 1, radius: 18 },
+                { id: "Toro", group: 1, radius: 18 },
+                { id: "Alenda", group: 1, radius: 20 },
+                { id: "Infraestructura", group: 2, radius: 30 },
+                { id: "Financiamiento", group: 2, radius: 25 },
+                { id: "Medios", group: 2, radius: 25 }
+            ];
+            
+            const links = [
+                { source: "Medvetz", target: "Stone" },
+                { source: "Medvetz", target: "Dobry" },
+                { source: "Puryear", target: "Silva" },
+                { source: "Puryear", target: "Gárate" },
+                { source: "Silva", target: "Cociña" },
+                { source: "Silva", target: "Toro" },
+                { source: "Gárate", target: "Alenda" },
+                { source: "Infraestructura", target: "Financiamiento" },
+                { source: "Infraestructura", target: "Medios" },
+                { source: "Medvetz", target: "Infraestructura" },
+                { source: "Puryear", target: "Infraestructura" }
+            ];
+            
+            // Create simulation
+            const simulation = d3.forceSimulation(nodes)
+                .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-120))
+                .force("center", d3.forceCenter(width / 2, height / 2))
+                .force("collide", d3.forceCollide().radius(d => d.radius + 5).iterations(2));
+            
+            // Draw links
+            const link = svg.append("g")
+                .selectAll("line")
+                .data(links)
+                .join("line")
+                .attr("stroke", "#94a3b8")
+                .attr("stroke-opacity", 0.6)
+                .attr("stroke-width", 1.5);
+            
+            // Draw nodes
+            const node = svg.append("g")
+                .selectAll("circle")
+                .data(nodes)
+                .join("circle")
+                .attr("r", d => d.radius)
+                .attr("fill", d => [colors[0], colors[3], colors[6]][d.group])
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 2)
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+            
+            // Draw labels
+            const label = svg.append("g")
+                .attr("font-size", 10)
+                .attr("text-anchor", "middle")
+                .selectAll("text")
+                .data(nodes)
+                .join("text")
+                .attr("dy", d => d.radius + 15)
+                .text(d => d.id);
+            
+            // Update positions
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+                
+                node
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y);
+                
+                label
+                    .attr("x", d => d.x)
+                    .attr("y", d => d.y);
+            });
+            
+            function dragstarted(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+            
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            }
+            
+            function dragended(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+        }
+        
+        // Initialize visualizations
+        createFieldDiagram();
+        createKnowledgeGraph();
     </script>
 </body>
 </html>
