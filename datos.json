@@ -1,0 +1,4780 @@
+{
+  "baseLogo": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/",
+  "logos": {
+    "CDC": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/cdc.png",
+    "CED": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ced.png",
+    "CEP": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/cep.svg",
+    "CLAPES UC": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/clapesuc.webp",
+    "Casa Común": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/casacomun.jpg",
+    "Chile 21": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/chile21.svg",
+    "Espacio Público": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/espaciopublico.png",
+    "FPP": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fpp.png",
+    "Fundación Jaime Guzmán": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fundacionjaimeguzman.png",
+    "Fundación Sol": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fundacionsol.png",
+    "Horizontal": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/horizontal.svg",
+    "Horizonte Ciudadano": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/horizonteciudadano.svg",
+    "ICAL": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ical.png",
+    "IES": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ies.webp",
+    "Idea País": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ideapais.png",
+    "Ideas Republicanas": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ideasrepublicanas.png",
+    "Instituto Igualdad": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutoigualdad.png",
+    "Instituto Libertad": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutolibertad.png",
+    "Instituto Res Pública": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutorespublica.png",
+    "LyD": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/lyd1536x1299.png",
+    "Nodo XXI": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/nodoxxi.webp",
+    "OPES": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/opes.webp",
+    "Pivotes": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/pivotes.png",
+    "Signos Uandes": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/signosuandes.svg"
+  },
+  "overalldata": [
+    {
+      "date": "2019-01",
+      "n": 179
+    },
+    {
+      "date": "2019-02",
+      "n": 80
+    },
+    {
+      "date": "2019-03",
+      "n": 266
+    },
+    {
+      "date": "2019-04",
+      "n": 271
+    },
+    {
+      "date": "2019-05",
+      "n": 285
+    },
+    {
+      "date": "2019-06",
+      "n": 285
+    },
+    {
+      "date": "2019-07",
+      "n": 222
+    },
+    {
+      "date": "2019-08",
+      "n": 263
+    },
+    {
+      "date": "2019-09",
+      "n": 246
+    },
+    {
+      "date": "2019-10",
+      "n": 318
+    },
+    {
+      "date": "2019-11",
+      "n": 281
+    },
+    {
+      "date": "2019-12",
+      "n": 332
+    },
+    {
+      "date": "2020-01",
+      "n": 328
+    },
+    {
+      "date": "2020-02",
+      "n": 122
+    },
+    {
+      "date": "2020-03",
+      "n": 312
+    },
+    {
+      "date": "2020-04",
+      "n": 387
+    },
+    {
+      "date": "2020-05",
+      "n": 375
+    },
+    {
+      "date": "2020-06",
+      "n": 336
+    },
+    {
+      "date": "2020-07",
+      "n": 374
+    },
+    {
+      "date": "2020-08",
+      "n": 378
+    },
+    {
+      "date": "2020-09",
+      "n": 356
+    },
+    {
+      "date": "2020-10",
+      "n": 369
+    },
+    {
+      "date": "2020-11",
+      "n": 355
+    },
+    {
+      "date": "2020-12",
+      "n": 290
+    },
+    {
+      "date": "2021-01",
+      "n": 290
+    },
+    {
+      "date": "2021-02",
+      "n": 148
+    },
+    {
+      "date": "2021-03",
+      "n": 293
+    },
+    {
+      "date": "2021-04",
+      "n": 292
+    },
+    {
+      "date": "2021-05",
+      "n": 243
+    },
+    {
+      "date": "2021-06",
+      "n": 264
+    },
+    {
+      "date": "2021-07",
+      "n": 282
+    },
+    {
+      "date": "2021-08",
+      "n": 297
+    },
+    {
+      "date": "2021-09",
+      "n": 247
+    },
+    {
+      "date": "2021-10",
+      "n": 285
+    },
+    {
+      "date": "2021-11",
+      "n": 291
+    },
+    {
+      "date": "2021-12",
+      "n": 245
+    },
+    {
+      "date": "2022-01",
+      "n": 256
+    },
+    {
+      "date": "2022-02",
+      "n": 122
+    },
+    {
+      "date": "2022-03",
+      "n": 238
+    },
+    {
+      "date": "2022-04",
+      "n": 278
+    },
+    {
+      "date": "2022-05",
+      "n": 298
+    },
+    {
+      "date": "2022-06",
+      "n": 271
+    },
+    {
+      "date": "2022-07",
+      "n": 296
+    },
+    {
+      "date": "2022-08",
+      "n": 355
+    },
+    {
+      "date": "2022-09",
+      "n": 266
+    },
+    {
+      "date": "2022-10",
+      "n": 313
+    },
+    {
+      "date": "2022-11",
+      "n": 273
+    },
+    {
+      "date": "2022-12",
+      "n": 264
+    },
+    {
+      "date": "2023-01",
+      "n": 243
+    },
+    {
+      "date": "2023-02",
+      "n": 121
+    },
+    {
+      "date": "2023-03",
+      "n": 429
+    },
+    {
+      "date": "2023-04",
+      "n": 322
+    },
+    {
+      "date": "2023-05",
+      "n": 388
+    },
+    {
+      "date": "2023-06",
+      "n": 350
+    },
+    {
+      "date": "2023-07",
+      "n": 352
+    },
+    {
+      "date": "2023-08",
+      "n": 378
+    },
+    {
+      "date": "2023-09",
+      "n": 304
+    },
+    {
+      "date": "2023-10",
+      "n": 331
+    },
+    {
+      "date": "2023-11",
+      "n": 358
+    },
+    {
+      "date": "2023-12",
+      "n": 439
+    },
+    {
+      "total": 17418 
+    }
+  ],
+  "thinkTanks": [
+    {
+      "id": "CDC",
+      "name": "CDC",
+      "total": 171,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/cdc.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 1
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 1
+        },
+        {
+          "date": "2019-04",
+          "n": 3
+        },
+        {
+          "date": "2019-05",
+          "n": 1
+        },
+        {
+          "date": "2019-06",
+          "n": 0
+        },
+        {
+          "date": "2019-07",
+          "n": 1
+        },
+        {
+          "date": "2019-08",
+          "n": 0
+        },
+        {
+          "date": "2019-09",
+          "n": 0
+        },
+        {
+          "date": "2019-10",
+          "n": 1
+        },
+        {
+          "date": "2019-11",
+          "n": 0
+        },
+        {
+          "date": "2019-12",
+          "n": 1
+        },
+        {
+          "date": "2020-01",
+          "n": 1
+        },
+        {
+          "date": "2020-02",
+          "n": 0
+        },
+        {
+          "date": "2020-03",
+          "n": 0
+        },
+        {
+          "date": "2020-04",
+          "n": 0
+        },
+        {
+          "date": "2020-05",
+          "n": 0
+        },
+        {
+          "date": "2020-06",
+          "n": 0
+        },
+        {
+          "date": "2020-07",
+          "n": 0
+        },
+        {
+          "date": "2020-08",
+          "n": 0
+        },
+        {
+          "date": "2020-09",
+          "n": 0
+        },
+        {
+          "date": "2020-10",
+          "n": 0
+        },
+        {
+          "date": "2020-11",
+          "n": 0
+        },
+        {
+          "date": "2020-12",
+          "n": 1
+        },
+        {
+          "date": "2021-01",
+          "n": 2
+        },
+        {
+          "date": "2021-02",
+          "n": 0
+        },
+        {
+          "date": "2021-03",
+          "n": 1
+        },
+        {
+          "date": "2021-04",
+          "n": 0
+        },
+        {
+          "date": "2021-05",
+          "n": 1
+        },
+        {
+          "date": "2021-06",
+          "n": 0
+        },
+        {
+          "date": "2021-07",
+          "n": 7
+        },
+        {
+          "date": "2021-08",
+          "n": 15
+        },
+        {
+          "date": "2021-09",
+          "n": 1
+        },
+        {
+          "date": "2021-10",
+          "n": 7
+        },
+        {
+          "date": "2021-11",
+          "n": 9
+        },
+        {
+          "date": "2021-12",
+          "n": 18
+        },
+        {
+          "date": "2022-01",
+          "n": 8
+        },
+        {
+          "date": "2022-02",
+          "n": 5
+        },
+        {
+          "date": "2022-03",
+          "n": 9
+        },
+        {
+          "date": "2022-04",
+          "n": 9
+        },
+        {
+          "date": "2022-05",
+          "n": 5
+        },
+        {
+          "date": "2022-06",
+          "n": 2
+        },
+        {
+          "date": "2022-07",
+          "n": 7
+        },
+        {
+          "date": "2022-08",
+          "n": 4
+        },
+        {
+          "date": "2022-09",
+          "n": 10
+        },
+        {
+          "date": "2022-10",
+          "n": 10
+        },
+        {
+          "date": "2022-11",
+          "n": 4
+        },
+        {
+          "date": "2022-12",
+          "n": 8
+        },
+        {
+          "date": "2023-01",
+          "n": 6
+        },
+        {
+          "date": "2023-02",
+          "n": 0
+        },
+        {
+          "date": "2023-03",
+          "n": 2
+        },
+        {
+          "date": "2023-04",
+          "n": 4
+        },
+        {
+          "date": "2023-05",
+          "n": 1
+        },
+        {
+          "date": "2023-06",
+          "n": 4
+        },
+        {
+          "date": "2023-07",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "CED",
+      "name": "CED",
+      "total": 265,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ced.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 1
+        },
+        {
+          "date": "2019-02",
+          "n": 1
+        },
+        {
+          "date": "2019-03",
+          "n": 1
+        },
+        {
+          "date": "2019-04",
+          "n": 2
+        },
+        {
+          "date": "2019-05",
+          "n": 1
+        },
+        {
+          "date": "2019-06",
+          "n": 1
+        },
+        {
+          "date": "2019-07",
+          "n": 2
+        },
+        {
+          "date": "2019-08",
+          "n": 0
+        },
+        {
+          "date": "2019-09",
+          "n": 3
+        },
+        {
+          "date": "2019-10",
+          "n": 0
+        },
+        {
+          "date": "2019-11",
+          "n": 0
+        },
+        {
+          "date": "2019-12",
+          "n": 3
+        },
+        {
+          "date": "2020-01",
+          "n": 2
+        },
+        {
+          "date": "2020-02",
+          "n": 0
+        },
+        {
+          "date": "2020-03",
+          "n": 2
+        },
+        {
+          "date": "2020-04",
+          "n": 0
+        },
+        {
+          "date": "2020-05",
+          "n": 0
+        },
+        {
+          "date": "2020-06",
+          "n": 1
+        },
+        {
+          "date": "2020-07",
+          "n": 2
+        },
+        {
+          "date": "2020-08",
+          "n": 2
+        },
+        {
+          "date": "2020-09",
+          "n": 2
+        },
+        {
+          "date": "2020-10",
+          "n": 2
+        },
+        {
+          "date": "2020-11",
+          "n": 2
+        },
+        {
+          "date": "2020-12",
+          "n": 2
+        },
+        {
+          "date": "2021-01",
+          "n": 1
+        },
+        {
+          "date": "2021-02",
+          "n": 0
+        },
+        {
+          "date": "2021-03",
+          "n": 1
+        },
+        {
+          "date": "2021-04",
+          "n": 0
+        },
+        {
+          "date": "2021-05",
+          "n": 1
+        },
+        {
+          "date": "2021-06",
+          "n": 1
+        },
+        {
+          "date": "2021-07",
+          "n": 2
+        },
+        {
+          "date": "2021-08",
+          "n": 3
+        },
+        {
+          "date": "2021-09",
+          "n": 5
+        },
+        {
+          "date": "2021-10",
+          "n": 4
+        },
+        {
+          "date": "2021-11",
+          "n": 3
+        },
+        {
+          "date": "2021-12",
+          "n": 2
+        },
+        {
+          "date": "2022-01",
+          "n": 5
+        },
+        {
+          "date": "2022-02",
+          "n": 10
+        },
+        {
+          "date": "2022-03",
+          "n": 9
+        },
+        {
+          "date": "2022-04",
+          "n": 6
+        },
+        {
+          "date": "2022-05",
+          "n": 11
+        },
+        {
+          "date": "2022-06",
+          "n": 7
+        },
+        {
+          "date": "2022-07",
+          "n": 12
+        },
+        {
+          "date": "2022-08",
+          "n": 9
+        },
+        {
+          "date": "2022-09",
+          "n": 5
+        },
+        {
+          "date": "2022-10",
+          "n": 6
+        },
+        {
+          "date": "2022-11",
+          "n": 7
+        },
+        {
+          "date": "2022-12",
+          "n": 5
+        },
+        {
+          "date": "2023-01",
+          "n": 6
+        },
+        {
+          "date": "2023-02",
+          "n": 0
+        },
+        {
+          "date": "2023-03",
+          "n": 18
+        },
+        {
+          "date": "2023-04",
+          "n": 14
+        },
+        {
+          "date": "2023-05",
+          "n": 18
+        },
+        {
+          "date": "2023-06",
+          "n": 15
+        },
+        {
+          "date": "2023-07",
+          "n": 13
+        },
+        {
+          "date": "2023-08",
+          "n": 9
+        },
+        {
+          "date": "2023-09",
+          "n": 9
+        },
+        {
+          "date": "2023-10",
+          "n": 7
+        },
+        {
+          "date": "2023-11",
+          "n": 5
+        },
+        {
+          "date": "2023-12",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "id": "CEP",
+      "name": "CEP",
+      "total": 1998,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/cep.svg",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 8
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 2
+        },
+        {
+          "date": "2019-04",
+          "n": 2
+        },
+        {
+          "date": "2019-05",
+          "n": 2
+        },
+        {
+          "date": "2019-06",
+          "n": 4
+        },
+        {
+          "date": "2019-07",
+          "n": 5
+        },
+        {
+          "date": "2019-08",
+          "n": 9
+        },
+        {
+          "date": "2019-09",
+          "n": 3
+        },
+        {
+          "date": "2019-10",
+          "n": 31
+        },
+        {
+          "date": "2019-11",
+          "n": 68
+        },
+        {
+          "date": "2019-12",
+          "n": 29
+        },
+        {
+          "date": "2020-01",
+          "n": 41
+        },
+        {
+          "date": "2020-02",
+          "n": 6
+        },
+        {
+          "date": "2020-03",
+          "n": 23
+        },
+        {
+          "date": "2020-04",
+          "n": 31
+        },
+        {
+          "date": "2020-05",
+          "n": 38
+        },
+        {
+          "date": "2020-06",
+          "n": 28
+        },
+        {
+          "date": "2020-07",
+          "n": 35
+        },
+        {
+          "date": "2020-08",
+          "n": 37
+        },
+        {
+          "date": "2020-09",
+          "n": 43
+        },
+        {
+          "date": "2020-10",
+          "n": 40
+        },
+        {
+          "date": "2020-11",
+          "n": 58
+        },
+        {
+          "date": "2020-12",
+          "n": 39
+        },
+        {
+          "date": "2021-01",
+          "n": 41
+        },
+        {
+          "date": "2021-02",
+          "n": 17
+        },
+        {
+          "date": "2021-03",
+          "n": 33
+        },
+        {
+          "date": "2021-04",
+          "n": 39
+        },
+        {
+          "date": "2021-05",
+          "n": 34
+        },
+        {
+          "date": "2021-06",
+          "n": 33
+        },
+        {
+          "date": "2021-07",
+          "n": 34
+        },
+        {
+          "date": "2021-08",
+          "n": 35
+        },
+        {
+          "date": "2021-09",
+          "n": 35
+        },
+        {
+          "date": "2021-10",
+          "n": 30
+        },
+        {
+          "date": "2021-11",
+          "n": 41
+        },
+        {
+          "date": "2021-12",
+          "n": 29
+        },
+        {
+          "date": "2022-01",
+          "n": 46
+        },
+        {
+          "date": "2022-02",
+          "n": 21
+        },
+        {
+          "date": "2022-03",
+          "n": 47
+        },
+        {
+          "date": "2022-04",
+          "n": 49
+        },
+        {
+          "date": "2022-05",
+          "n": 50
+        },
+        {
+          "date": "2022-06",
+          "n": 51
+        },
+        {
+          "date": "2022-07",
+          "n": 38
+        },
+        {
+          "date": "2022-08",
+          "n": 97
+        },
+        {
+          "date": "2022-09",
+          "n": 45
+        },
+        {
+          "date": "2022-10",
+          "n": 52
+        },
+        {
+          "date": "2022-11",
+          "n": 51
+        },
+        {
+          "date": "2022-12",
+          "n": 45
+        },
+        {
+          "date": "2023-01",
+          "n": 42
+        },
+        {
+          "date": "2023-02",
+          "n": 22
+        },
+        {
+          "date": "2023-03",
+          "n": 52
+        },
+        {
+          "date": "2023-04",
+          "n": 33
+        },
+        {
+          "date": "2023-05",
+          "n": 38
+        },
+        {
+          "date": "2023-06",
+          "n": 43
+        },
+        {
+          "date": "2023-07",
+          "n": 41
+        },
+        {
+          "date": "2023-08",
+          "n": 38
+        },
+        {
+          "date": "2023-09",
+          "n": 25
+        },
+        {
+          "date": "2023-10",
+          "n": 26
+        },
+        {
+          "date": "2023-11",
+          "n": 34
+        },
+        {
+          "date": "2023-12",
+          "n": 29
+        }
+      ]
+    },
+    {
+      "id": "CLAPES",
+      "name": "CLAPES UC",
+      "total": 205,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/clapesuc.webp",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 1
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 1
+        },
+        {
+          "date": "2019-04",
+          "n": 2
+        },
+        {
+          "date": "2019-05",
+          "n": 0
+        },
+        {
+          "date": "2019-06",
+          "n": 0
+        },
+        {
+          "date": "2019-07",
+          "n": 1
+        },
+        {
+          "date": "2019-08",
+          "n": 3
+        },
+        {
+          "date": "2019-09",
+          "n": 2
+        },
+        {
+          "date": "2019-10",
+          "n": 1
+        },
+        {
+          "date": "2019-11",
+          "n": 1
+        },
+        {
+          "date": "2019-12",
+          "n": 0
+        },
+        {
+          "date": "2020-01",
+          "n": 2
+        },
+        {
+          "date": "2020-02",
+          "n": 0
+        },
+        {
+          "date": "2020-03",
+          "n": 0
+        },
+        {
+          "date": "2020-04",
+          "n": 0
+        },
+        {
+          "date": "2020-05",
+          "n": 1
+        },
+        {
+          "date": "2020-06",
+          "n": 4
+        },
+        {
+          "date": "2020-07",
+          "n": 3
+        },
+        {
+          "date": "2020-08",
+          "n": 2
+        },
+        {
+          "date": "2020-09",
+          "n": 1
+        },
+        {
+          "date": "2020-10",
+          "n": 2
+        },
+        {
+          "date": "2020-11",
+          "n": 2
+        },
+        {
+          "date": "2020-12",
+          "n": 0
+        },
+        {
+          "date": "2021-01",
+          "n": 1
+        },
+        {
+          "date": "2021-02",
+          "n": 0
+        },
+        {
+          "date": "2021-03",
+          "n": 3
+        },
+        {
+          "date": "2021-04",
+          "n": 1
+        },
+        {
+          "date": "2021-05",
+          "n": 4
+        },
+        {
+          "date": "2021-06",
+          "n": 2
+        },
+        {
+          "date": "2021-07",
+          "n": 4
+        },
+        {
+          "date": "2021-08",
+          "n": 3
+        },
+        {
+          "date": "2021-09",
+          "n": 2
+        },
+        {
+          "date": "2021-10",
+          "n": 3
+        },
+        {
+          "date": "2021-11",
+          "n": 3
+        },
+        {
+          "date": "2021-12",
+          "n": 1
+        },
+        {
+          "date": "2022-01",
+          "n": 2
+        },
+        {
+          "date": "2022-02",
+          "n": 0
+        },
+        {
+          "date": "2022-03",
+          "n": 2
+        },
+        {
+          "date": "2022-04",
+          "n": 4
+        },
+        {
+          "date": "2022-05",
+          "n": 2
+        },
+        {
+          "date": "2022-06",
+          "n": 2
+        },
+        {
+          "date": "2022-07",
+          "n": 0
+        },
+        {
+          "date": "2022-08",
+          "n": 8
+        },
+        {
+          "date": "2022-09",
+          "n": 2
+        },
+        {
+          "date": "2022-10",
+          "n": 5
+        },
+        {
+          "date": "2022-11",
+          "n": 2
+        },
+        {
+          "date": "2022-12",
+          "n": 2
+        },
+        {
+          "date": "2023-01",
+          "n": 2
+        },
+        {
+          "date": "2023-02",
+          "n": 0
+        },
+        {
+          "date": "2023-03",
+          "n": 3
+        },
+        {
+          "date": "2023-04",
+          "n": 2
+        },
+        {
+          "date": "2023-05",
+          "n": 3
+        },
+        {
+          "date": "2023-06",
+          "n": 3
+        },
+        {
+          "date": "2023-07",
+          "n": 4
+        },
+        {
+          "date": "2023-08",
+          "n": 3
+        },
+        {
+          "date": "2023-09",
+          "n": 3
+        },
+        {
+          "date": "2023-10",
+          "n": 1
+        },
+        {
+          "date": "2023-11",
+          "n": 5
+        },
+        {
+          "date": "2023-12",
+          "n": 89
+        }
+      ]
+    },
+    {
+      "id": "CasaComun",
+      "name": "Casa Común",
+      "total": 227,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/casacomun.jpg",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 2
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 5
+        },
+        {
+          "date": "2019-04",
+          "n": 2
+        },
+        {
+          "date": "2019-05",
+          "n": 3
+        },
+        {
+          "date": "2019-06",
+          "n": 3
+        },
+        {
+          "date": "2019-07",
+          "n": 4
+        },
+        {
+          "date": "2019-08",
+          "n": 1
+        },
+        {
+          "date": "2019-09",
+          "n": 5
+        },
+        {
+          "date": "2019-10",
+          "n": 0
+        },
+        {
+          "date": "2019-11",
+          "n": 1
+        },
+        {
+          "date": "2019-12",
+          "n": 1
+        },
+        {
+          "date": "2020-01",
+          "n": 3
+        },
+        {
+          "date": "2020-02",
+          "n": 4
+        },
+        {
+          "date": "2020-03",
+          "n": 2
+        },
+        {
+          "date": "2020-04",
+          "n": 3
+        },
+        {
+          "date": "2020-05",
+          "n": 7
+        },
+        {
+          "date": "2020-06",
+          "n": 5
+        },
+        {
+          "date": "2020-07",
+          "n": 5
+        },
+        {
+          "date": "2020-08",
+          "n": 8
+        },
+        {
+          "date": "2020-09",
+          "n": 10
+        },
+        {
+          "date": "2020-10",
+          "n": 7
+        },
+        {
+          "date": "2020-11",
+          "n": 6
+        },
+        {
+          "date": "2020-12",
+          "n": 5
+        },
+        {
+          "date": "2021-01",
+          "n": 3
+        },
+        {
+          "date": "2021-02",
+          "n": 4
+        },
+        {
+          "date": "2021-03",
+          "n": 6
+        },
+        {
+          "date": "2021-04",
+          "n": 5
+        },
+        {
+          "date": "2021-05",
+          "n": 7
+        },
+        {
+          "date": "2021-06",
+          "n": 9
+        },
+        {
+          "date": "2021-07",
+          "n": 8
+        },
+        {
+          "date": "2021-08",
+          "n": 6
+        },
+        {
+          "date": "2021-09",
+          "n": 8
+        },
+        {
+          "date": "2021-10",
+          "n": 9
+        },
+        {
+          "date": "2021-11",
+          "n": 5
+        },
+        {
+          "date": "2021-12",
+          "n": 4
+        },
+        {
+          "date": "2022-01",
+          "n": 7
+        },
+        {
+          "date": "2022-02",
+          "n": 6
+        },
+        {
+          "date": "2022-03",
+          "n": 5
+        },
+        {
+          "date": "2022-04",
+          "n": 8
+        },
+        {
+          "date": "2022-05",
+          "n": 6
+        },
+        {
+          "date": "2022-06",
+          "n": 6
+        },
+        {
+          "date": "2022-07",
+          "n": 2
+        },
+        {
+          "date": "2022-08",
+          "n": 2
+        },
+        {
+          "date": "2022-09",
+          "n": 1
+        },
+        {
+          "date": "2022-10",
+          "n": 4
+        },
+        {
+          "date": "2022-11",
+          "n": 0
+        },
+        {
+          "date": "2022-12",
+          "n": 3
+        },
+        {
+          "date": "2023-01",
+          "n": 0
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 3
+        },
+        {
+          "date": "2023-04",
+          "n": 4
+        },
+        {
+          "date": "2023-05",
+          "n": 2
+        },
+        {
+          "date": "2023-06",
+          "n": 0
+        },
+        {
+          "date": "2023-07",
+          "n": 0
+        },
+        {
+          "date": "2023-08",
+          "n": 0
+        },
+        {
+          "date": "2023-09",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "Chile21",
+      "name": "Chile 21",
+      "total": 288,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/chile21.svg",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 3
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 14
+        },
+        {
+          "date": "2019-04",
+          "n": 15
+        },
+        {
+          "date": "2019-05",
+          "n": 13
+        },
+        {
+          "date": "2019-06",
+          "n": 10
+        },
+        {
+          "date": "2019-07",
+          "n": 4
+        },
+        {
+          "date": "2019-08",
+          "n": 5
+        },
+        {
+          "date": "2019-09",
+          "n": 5
+        },
+        {
+          "date": "2019-10",
+          "n": 9
+        },
+        {
+          "date": "2019-11",
+          "n": 6
+        },
+        {
+          "date": "2019-12",
+          "n": 3
+        },
+        {
+          "date": "2020-01",
+          "n": 1
+        },
+        {
+          "date": "2020-02",
+          "n": 4
+        },
+        {
+          "date": "2020-03",
+          "n": 3
+        },
+        {
+          "date": "2020-04",
+          "n": 10
+        },
+        {
+          "date": "2020-05",
+          "n": 14
+        },
+        {
+          "date": "2020-06",
+          "n": 13
+        },
+        {
+          "date": "2020-07",
+          "n": 7
+        },
+        {
+          "date": "2020-08",
+          "n": 8
+        },
+        {
+          "date": "2020-09",
+          "n": 17
+        },
+        {
+          "date": "2020-10",
+          "n": 6
+        },
+        {
+          "date": "2020-11",
+          "n": 4
+        },
+        {
+          "date": "2020-12",
+          "n": 3
+        },
+        {
+          "date": "2021-01",
+          "n": 5
+        },
+        {
+          "date": "2021-02",
+          "n": 1
+        },
+        {
+          "date": "2021-03",
+          "n": 2
+        },
+        {
+          "date": "2021-04",
+          "n": 2
+        },
+        {
+          "date": "2021-05",
+          "n": 4
+        },
+        {
+          "date": "2021-06",
+          "n": 2
+        },
+        {
+          "date": "2021-07",
+          "n": 5
+        },
+        {
+          "date": "2021-08",
+          "n": 5
+        },
+        {
+          "date": "2021-09",
+          "n": 5
+        },
+        {
+          "date": "2021-10",
+          "n": 7
+        },
+        {
+          "date": "2021-11",
+          "n": 6
+        },
+        {
+          "date": "2021-12",
+          "n": 6
+        },
+        {
+          "date": "2022-01",
+          "n": 5
+        },
+        {
+          "date": "2022-02",
+          "n": 3
+        },
+        {
+          "date": "2022-03",
+          "n": 5
+        },
+        {
+          "date": "2022-04",
+          "n": 5
+        },
+        {
+          "date": "2022-05",
+          "n": 4
+        },
+        {
+          "date": "2022-06",
+          "n": 7
+        },
+        {
+          "date": "2022-07",
+          "n": 2
+        },
+        {
+          "date": "2022-08",
+          "n": 0
+        },
+        {
+          "date": "2022-09",
+          "n": 0
+        },
+        {
+          "date": "2022-10",
+          "n": 0
+        },
+        {
+          "date": "2022-11",
+          "n": 0
+        },
+        {
+          "date": "2022-12",
+          "n": 0
+        },
+        {
+          "date": "2023-01",
+          "n": 1
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 1
+        },
+        {
+          "date": "2023-04",
+          "n": 1
+        },
+        {
+          "date": "2023-05",
+          "n": 7
+        },
+        {
+          "date": "2023-06",
+          "n": 2
+        },
+        {
+          "date": "2023-07",
+          "n": 0
+        },
+        {
+          "date": "2023-08",
+          "n": 1
+        },
+        {
+          "date": "2023-09",
+          "n": 2
+        },
+        {
+          "date": "2023-10",
+          "n": 1
+        },
+        {
+          "date": "2023-11",
+          "n": 5
+        },
+        {
+          "date": "2023-12",
+          "n": 8
+        }
+      ]
+    },
+    {
+      "id": "EspPublico",
+      "name": "Espacio Público",
+      "total": 1525,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/espaciopublico.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 8
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 7
+        },
+        {
+          "date": "2019-04",
+          "n": 6
+        },
+        {
+          "date": "2019-05",
+          "n": 6
+        },
+        {
+          "date": "2019-06",
+          "n": 15
+        },
+        {
+          "date": "2019-07",
+          "n": 11
+        },
+        {
+          "date": "2019-08",
+          "n": 23
+        },
+        {
+          "date": "2019-09",
+          "n": 35
+        },
+        {
+          "date": "2019-10",
+          "n": 38
+        },
+        {
+          "date": "2019-11",
+          "n": 25
+        },
+        {
+          "date": "2019-12",
+          "n": 58
+        },
+        {
+          "date": "2020-01",
+          "n": 56
+        },
+        {
+          "date": "2020-02",
+          "n": 13
+        },
+        {
+          "date": "2020-03",
+          "n": 41
+        },
+        {
+          "date": "2020-04",
+          "n": 45
+        },
+        {
+          "date": "2020-05",
+          "n": 38
+        },
+        {
+          "date": "2020-06",
+          "n": 45
+        },
+        {
+          "date": "2020-07",
+          "n": 41
+        },
+        {
+          "date": "2020-08",
+          "n": 67
+        },
+        {
+          "date": "2020-09",
+          "n": 46
+        },
+        {
+          "date": "2020-10",
+          "n": 39
+        },
+        {
+          "date": "2020-11",
+          "n": 52
+        },
+        {
+          "date": "2020-12",
+          "n": 29
+        },
+        {
+          "date": "2021-01",
+          "n": 33
+        },
+        {
+          "date": "2021-02",
+          "n": 33
+        },
+        {
+          "date": "2021-03",
+          "n": 32
+        },
+        {
+          "date": "2021-04",
+          "n": 38
+        },
+        {
+          "date": "2021-05",
+          "n": 22
+        },
+        {
+          "date": "2021-06",
+          "n": 19
+        },
+        {
+          "date": "2021-07",
+          "n": 34
+        },
+        {
+          "date": "2021-08",
+          "n": 26
+        },
+        {
+          "date": "2021-09",
+          "n": 15
+        },
+        {
+          "date": "2021-10",
+          "n": 25
+        },
+        {
+          "date": "2021-11",
+          "n": 18
+        },
+        {
+          "date": "2021-12",
+          "n": 19
+        },
+        {
+          "date": "2022-01",
+          "n": 16
+        },
+        {
+          "date": "2022-02",
+          "n": 12
+        },
+        {
+          "date": "2022-03",
+          "n": 13
+        },
+        {
+          "date": "2022-04",
+          "n": 15
+        },
+        {
+          "date": "2022-05",
+          "n": 22
+        },
+        {
+          "date": "2022-06",
+          "n": 17
+        },
+        {
+          "date": "2022-07",
+          "n": 19
+        },
+        {
+          "date": "2022-08",
+          "n": 19
+        },
+        {
+          "date": "2022-09",
+          "n": 18
+        },
+        {
+          "date": "2022-10",
+          "n": 22
+        },
+        {
+          "date": "2022-11",
+          "n": 22
+        },
+        {
+          "date": "2022-12",
+          "n": 14
+        },
+        {
+          "date": "2023-01",
+          "n": 18
+        },
+        {
+          "date": "2023-02",
+          "n": 11
+        },
+        {
+          "date": "2023-03",
+          "n": 17
+        },
+        {
+          "date": "2023-04",
+          "n": 27
+        },
+        {
+          "date": "2023-05",
+          "n": 28
+        },
+        {
+          "date": "2023-06",
+          "n": 22
+        },
+        {
+          "date": "2023-07",
+          "n": 36
+        },
+        {
+          "date": "2023-08",
+          "n": 34
+        },
+        {
+          "date": "2023-09",
+          "n": 16
+        },
+        {
+          "date": "2023-10",
+          "n": 11
+        },
+        {
+          "date": "2023-11",
+          "n": 14
+        },
+        {
+          "date": "2023-12",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "id": "FPP",
+      "name": "FPP",
+      "total": 2585,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fpp.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 20
+        },
+        {
+          "date": "2019-02",
+          "n": 18
+        },
+        {
+          "date": "2019-03",
+          "n": 69
+        },
+        {
+          "date": "2019-04",
+          "n": 62
+        },
+        {
+          "date": "2019-05",
+          "n": 71
+        },
+        {
+          "date": "2019-06",
+          "n": 83
+        },
+        {
+          "date": "2019-07",
+          "n": 37
+        },
+        {
+          "date": "2019-08",
+          "n": 36
+        },
+        {
+          "date": "2019-09",
+          "n": 19
+        },
+        {
+          "date": "2019-10",
+          "n": 18
+        },
+        {
+          "date": "2019-11",
+          "n": 4
+        },
+        {
+          "date": "2019-12",
+          "n": 34
+        },
+        {
+          "date": "2020-01",
+          "n": 46
+        },
+        {
+          "date": "2020-02",
+          "n": 37
+        },
+        {
+          "date": "2020-03",
+          "n": 47
+        },
+        {
+          "date": "2020-04",
+          "n": 77
+        },
+        {
+          "date": "2020-05",
+          "n": 84
+        },
+        {
+          "date": "2020-06",
+          "n": 33
+        },
+        {
+          "date": "2020-07",
+          "n": 47
+        },
+        {
+          "date": "2020-08",
+          "n": 47
+        },
+        {
+          "date": "2020-09",
+          "n": 41
+        },
+        {
+          "date": "2020-10",
+          "n": 71
+        },
+        {
+          "date": "2020-11",
+          "n": 40
+        },
+        {
+          "date": "2020-12",
+          "n": 54
+        },
+        {
+          "date": "2021-01",
+          "n": 50
+        },
+        {
+          "date": "2021-02",
+          "n": 26
+        },
+        {
+          "date": "2021-03",
+          "n": 43
+        },
+        {
+          "date": "2021-04",
+          "n": 30
+        },
+        {
+          "date": "2021-05",
+          "n": 32
+        },
+        {
+          "date": "2021-06",
+          "n": 41
+        },
+        {
+          "date": "2021-07",
+          "n": 41
+        },
+        {
+          "date": "2021-08",
+          "n": 38
+        },
+        {
+          "date": "2021-09",
+          "n": 32
+        },
+        {
+          "date": "2021-10",
+          "n": 32
+        },
+        {
+          "date": "2021-11",
+          "n": 37
+        },
+        {
+          "date": "2021-12",
+          "n": 15
+        },
+        {
+          "date": "2022-01",
+          "n": 23
+        },
+        {
+          "date": "2022-02",
+          "n": 10
+        },
+        {
+          "date": "2022-03",
+          "n": 16
+        },
+        {
+          "date": "2022-04",
+          "n": 25
+        },
+        {
+          "date": "2022-05",
+          "n": 34
+        },
+        {
+          "date": "2022-06",
+          "n": 25
+        },
+        {
+          "date": "2022-07",
+          "n": 46
+        },
+        {
+          "date": "2022-08",
+          "n": 44
+        },
+        {
+          "date": "2022-09",
+          "n": 67
+        },
+        {
+          "date": "2022-10",
+          "n": 53
+        },
+        {
+          "date": "2022-11",
+          "n": 48
+        },
+        {
+          "date": "2022-12",
+          "n": 34
+        },
+        {
+          "date": "2023-01",
+          "n": 28
+        },
+        {
+          "date": "2023-02",
+          "n": 25
+        },
+        {
+          "date": "2023-03",
+          "n": 56
+        },
+        {
+          "date": "2023-04",
+          "n": 68
+        },
+        {
+          "date": "2023-05",
+          "n": 88
+        },
+        {
+          "date": "2023-06",
+          "n": 75
+        },
+        {
+          "date": "2023-07",
+          "n": 19
+        },
+        {
+          "date": "2023-08",
+          "n": 68
+        },
+        {
+          "date": "2023-09",
+          "n": 53
+        },
+        {
+          "date": "2023-10",
+          "n": 60
+        },
+        {
+          "date": "2023-11",
+          "n": 46
+        },
+        {
+          "date": "2023-12",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "FJG",
+      "name": "Fundación Jaime Guzmán",
+      "total": 678,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fundacionjaimeguzman.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 19
+        },
+        {
+          "date": "2019-02",
+          "n": 10
+        },
+        {
+          "date": "2019-03",
+          "n": 13
+        },
+        {
+          "date": "2019-04",
+          "n": 18
+        },
+        {
+          "date": "2019-05",
+          "n": 19
+        },
+        {
+          "date": "2019-06",
+          "n": 14
+        },
+        {
+          "date": "2019-07",
+          "n": 8
+        },
+        {
+          "date": "2019-08",
+          "n": 8
+        },
+        {
+          "date": "2019-09",
+          "n": 5
+        },
+        {
+          "date": "2019-10",
+          "n": 12
+        },
+        {
+          "date": "2019-11",
+          "n": 7
+        },
+        {
+          "date": "2019-12",
+          "n": 12
+        },
+        {
+          "date": "2020-01",
+          "n": 13
+        },
+        {
+          "date": "2020-02",
+          "n": 12
+        },
+        {
+          "date": "2020-03",
+          "n": 11
+        },
+        {
+          "date": "2020-04",
+          "n": 17
+        },
+        {
+          "date": "2020-05",
+          "n": 12
+        },
+        {
+          "date": "2020-06",
+          "n": 12
+        },
+        {
+          "date": "2020-07",
+          "n": 18
+        },
+        {
+          "date": "2020-08",
+          "n": 10
+        },
+        {
+          "date": "2020-09",
+          "n": 8
+        },
+        {
+          "date": "2020-10",
+          "n": 16
+        },
+        {
+          "date": "2020-11",
+          "n": 10
+        },
+        {
+          "date": "2020-12",
+          "n": 9
+        },
+        {
+          "date": "2021-01",
+          "n": 6
+        },
+        {
+          "date": "2021-02",
+          "n": 4
+        },
+        {
+          "date": "2021-03",
+          "n": 7
+        },
+        {
+          "date": "2021-04",
+          "n": 12
+        },
+        {
+          "date": "2021-05",
+          "n": 8
+        },
+        {
+          "date": "2021-06",
+          "n": 8
+        },
+        {
+          "date": "2021-07",
+          "n": 13
+        },
+        {
+          "date": "2021-08",
+          "n": 9
+        },
+        {
+          "date": "2021-09",
+          "n": 8
+        },
+        {
+          "date": "2021-10",
+          "n": 8
+        },
+        {
+          "date": "2021-11",
+          "n": 5
+        },
+        {
+          "date": "2021-12",
+          "n": 6
+        },
+        {
+          "date": "2022-01",
+          "n": 12
+        },
+        {
+          "date": "2022-02",
+          "n": 7
+        },
+        {
+          "date": "2022-03",
+          "n": 16
+        },
+        {
+          "date": "2022-04",
+          "n": 19
+        },
+        {
+          "date": "2022-05",
+          "n": 14
+        },
+        {
+          "date": "2022-06",
+          "n": 14
+        },
+        {
+          "date": "2022-07",
+          "n": 17
+        },
+        {
+          "date": "2022-08",
+          "n": 17
+        },
+        {
+          "date": "2022-09",
+          "n": 9
+        },
+        {
+          "date": "2022-10",
+          "n": 13
+        },
+        {
+          "date": "2022-11",
+          "n": 7
+        },
+        {
+          "date": "2022-12",
+          "n": 6
+        },
+        {
+          "date": "2023-01",
+          "n": 13
+        },
+        {
+          "date": "2023-02",
+          "n": 3
+        },
+        {
+          "date": "2023-03",
+          "n": 14
+        },
+        {
+          "date": "2023-04",
+          "n": 9
+        },
+        {
+          "date": "2023-05",
+          "n": 12
+        },
+        {
+          "date": "2023-06",
+          "n": 12
+        },
+        {
+          "date": "2023-07",
+          "n": 12
+        },
+        {
+          "date": "2023-08",
+          "n": 11
+        },
+        {
+          "date": "2023-09",
+          "n": 9
+        },
+        {
+          "date": "2023-10",
+          "n": 16
+        },
+        {
+          "date": "2023-11",
+          "n": 13
+        },
+        {
+          "date": "2023-12",
+          "n": 16
+        }
+      ]
+    },
+    {
+      "id": "FSol",
+      "name": "Fundación Sol",
+      "total": 550,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fundacionsol.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 3
+        },
+        {
+          "date": "2019-02",
+          "n": 1
+        },
+        {
+          "date": "2019-03",
+          "n": 25
+        },
+        {
+          "date": "2019-04",
+          "n": 9
+        },
+        {
+          "date": "2019-05",
+          "n": 13
+        },
+        {
+          "date": "2019-06",
+          "n": 3
+        },
+        {
+          "date": "2019-07",
+          "n": 3
+        },
+        {
+          "date": "2019-08",
+          "n": 14
+        },
+        {
+          "date": "2019-09",
+          "n": 2
+        },
+        {
+          "date": "2019-10",
+          "n": 11
+        },
+        {
+          "date": "2019-11",
+          "n": 7
+        },
+        {
+          "date": "2019-12",
+          "n": 12
+        },
+        {
+          "date": "2020-01",
+          "n": 12
+        },
+        {
+          "date": "2020-02",
+          "n": 9
+        },
+        {
+          "date": "2020-03",
+          "n": 21
+        },
+        {
+          "date": "2020-04",
+          "n": 8
+        },
+        {
+          "date": "2020-05",
+          "n": 10
+        },
+        {
+          "date": "2020-06",
+          "n": 8
+        },
+        {
+          "date": "2020-07",
+          "n": 32
+        },
+        {
+          "date": "2020-08",
+          "n": 10
+        },
+        {
+          "date": "2020-09",
+          "n": 14
+        },
+        {
+          "date": "2020-10",
+          "n": 4
+        },
+        {
+          "date": "2020-11",
+          "n": 23
+        },
+        {
+          "date": "2020-12",
+          "n": 7
+        },
+        {
+          "date": "2021-01",
+          "n": 12
+        },
+        {
+          "date": "2021-02",
+          "n": 1
+        },
+        {
+          "date": "2021-03",
+          "n": 4
+        },
+        {
+          "date": "2021-04",
+          "n": 3
+        },
+        {
+          "date": "2021-05",
+          "n": 7
+        },
+        {
+          "date": "2021-06",
+          "n": 12
+        },
+        {
+          "date": "2021-07",
+          "n": 6
+        },
+        {
+          "date": "2021-08",
+          "n": 10
+        },
+        {
+          "date": "2021-09",
+          "n": 7
+        },
+        {
+          "date": "2021-10",
+          "n": 3
+        },
+        {
+          "date": "2021-11",
+          "n": 4
+        },
+        {
+          "date": "2021-12",
+          "n": 2
+        },
+        {
+          "date": "2022-01",
+          "n": 3
+        },
+        {
+          "date": "2022-02",
+          "n": 0
+        },
+        {
+          "date": "2022-03",
+          "n": 6
+        },
+        {
+          "date": "2022-04",
+          "n": 9
+        },
+        {
+          "date": "2022-05",
+          "n": 8
+        },
+        {
+          "date": "2022-06",
+          "n": 0
+        },
+        {
+          "date": "2022-07",
+          "n": 3
+        },
+        {
+          "date": "2022-08",
+          "n": 6
+        },
+        {
+          "date": "2022-09",
+          "n": 3
+        },
+        {
+          "date": "2022-10",
+          "n": 10
+        },
+        {
+          "date": "2022-11",
+          "n": 13
+        },
+        {
+          "date": "2022-12",
+          "n": 6
+        },
+        {
+          "date": "2023-01",
+          "n": 13
+        },
+        {
+          "date": "2023-02",
+          "n": 7
+        },
+        {
+          "date": "2023-03",
+          "n": 11
+        },
+        {
+          "date": "2023-04",
+          "n": 10
+        },
+        {
+          "date": "2023-05",
+          "n": 37
+        },
+        {
+          "date": "2023-06",
+          "n": 10
+        },
+        {
+          "date": "2023-07",
+          "n": 5
+        },
+        {
+          "date": "2023-08",
+          "n": 12
+        },
+        {
+          "date": "2023-09",
+          "n": 20
+        },
+        {
+          "date": "2023-10",
+          "n": 7
+        },
+        {
+          "date": "2023-11",
+          "n": 11
+        },
+        {
+          "date": "2023-12",
+          "n": 8
+        }
+      ]
+    },
+    {
+      "id": "Horizontal",
+      "name": "Horizontal",
+      "total": 116,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/horizontal.svg",
+      "data": [
+        {
+          "date": "2019-05",
+          "n": 1
+        },
+        {
+          "date": "2019-06",
+          "n": 0
+        },
+        {
+          "date": "2019-07",
+          "n": 0
+        },
+        {
+          "date": "2019-08",
+          "n": 2
+        },
+        {
+          "date": "2019-09",
+          "n": 2
+        },
+        {
+          "date": "2019-10",
+          "n": 1
+        },
+        {
+          "date": "2019-11",
+          "n": 4
+        },
+        {
+          "date": "2019-12",
+          "n": 6
+        },
+        {
+          "date": "2020-01",
+          "n": 0
+        },
+        {
+          "date": "2020-02",
+          "n": 2
+        },
+        {
+          "date": "2020-03",
+          "n": 2
+        },
+        {
+          "date": "2020-04",
+          "n": 3
+        },
+        {
+          "date": "2020-05",
+          "n": 2
+        },
+        {
+          "date": "2020-06",
+          "n": 5
+        },
+        {
+          "date": "2020-07",
+          "n": 0
+        },
+        {
+          "date": "2020-08",
+          "n": 3
+        },
+        {
+          "date": "2020-09",
+          "n": 3
+        },
+        {
+          "date": "2020-10",
+          "n": 4
+        },
+        {
+          "date": "2020-11",
+          "n": 1
+        },
+        {
+          "date": "2020-12",
+          "n": 2
+        },
+        {
+          "date": "2021-01",
+          "n": 0
+        },
+        {
+          "date": "2021-02",
+          "n": 0
+        },
+        {
+          "date": "2021-03",
+          "n": 6
+        },
+        {
+          "date": "2021-04",
+          "n": 4
+        },
+        {
+          "date": "2021-05",
+          "n": 0
+        },
+        {
+          "date": "2021-06",
+          "n": 3
+        },
+        {
+          "date": "2021-07",
+          "n": 4
+        },
+        {
+          "date": "2021-08",
+          "n": 1
+        },
+        {
+          "date": "2021-09",
+          "n": 1
+        },
+        {
+          "date": "2021-10",
+          "n": 5
+        },
+        {
+          "date": "2021-11",
+          "n": 1
+        },
+        {
+          "date": "2021-12",
+          "n": 0
+        },
+        {
+          "date": "2022-01",
+          "n": 1
+        },
+        {
+          "date": "2022-02",
+          "n": 0
+        },
+        {
+          "date": "2022-03",
+          "n": 1
+        },
+        {
+          "date": "2022-04",
+          "n": 1
+        },
+        {
+          "date": "2022-05",
+          "n": 1
+        },
+        {
+          "date": "2022-06",
+          "n": 4
+        },
+        {
+          "date": "2022-07",
+          "n": 1
+        },
+        {
+          "date": "2022-08",
+          "n": 3
+        },
+        {
+          "date": "2022-09",
+          "n": 0
+        },
+        {
+          "date": "2022-10",
+          "n": 2
+        },
+        {
+          "date": "2022-11",
+          "n": 1
+        },
+        {
+          "date": "2022-12",
+          "n": 3
+        },
+        {
+          "date": "2023-01",
+          "n": 2
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 2
+        },
+        {
+          "date": "2023-04",
+          "n": 4
+        },
+        {
+          "date": "2023-05",
+          "n": 3
+        },
+        {
+          "date": "2023-06",
+          "n": 1
+        },
+        {
+          "date": "2023-07",
+          "n": 4
+        },
+        {
+          "date": "2023-08",
+          "n": 3
+        },
+        {
+          "date": "2023-09",
+          "n": 3
+        },
+        {
+          "date": "2023-10",
+          "n": 0
+        },
+        {
+          "date": "2023-11",
+          "n": 4
+        },
+        {
+          "date": "2023-12",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "id": "Horizonte",
+      "name": "Horizonte Ciudadano",
+      "total": 130,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/horizonteciudadano.svg",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 1
+        },
+        {
+          "date": "2019-02",
+          "n": 0
+        },
+        {
+          "date": "2019-03",
+          "n": 2
+        },
+        {
+          "date": "2019-04",
+          "n": 0
+        },
+        {
+          "date": "2019-05",
+          "n": 1
+        },
+        {
+          "date": "2019-06",
+          "n": 0
+        },
+        {
+          "date": "2019-07",
+          "n": 0
+        },
+        {
+          "date": "2019-08",
+          "n": 2
+        },
+        {
+          "date": "2019-09",
+          "n": 0
+        },
+        {
+          "date": "2019-10",
+          "n": 3
+        },
+        {
+          "date": "2019-11",
+          "n": 2
+        },
+        {
+          "date": "2019-12",
+          "n": 4
+        },
+        {
+          "date": "2020-01",
+          "n": 1
+        },
+        {
+          "date": "2020-02",
+          "n": 1
+        },
+        {
+          "date": "2020-03",
+          "n": 6
+        },
+        {
+          "date": "2020-04",
+          "n": 5
+        },
+        {
+          "date": "2020-05",
+          "n": 11
+        },
+        {
+          "date": "2020-06",
+          "n": 8
+        },
+        {
+          "date": "2020-07",
+          "n": 6
+        },
+        {
+          "date": "2020-08",
+          "n": 6
+        },
+        {
+          "date": "2020-09",
+          "n": 4
+        },
+        {
+          "date": "2020-10",
+          "n": 6
+        },
+        {
+          "date": "2020-11",
+          "n": 2
+        },
+        {
+          "date": "2020-12",
+          "n": 2
+        },
+        {
+          "date": "2021-01",
+          "n": 2
+        },
+        {
+          "date": "2021-02",
+          "n": 3
+        },
+        {
+          "date": "2021-03",
+          "n": 6
+        },
+        {
+          "date": "2021-04",
+          "n": 5
+        },
+        {
+          "date": "2021-05",
+          "n": 1
+        },
+        {
+          "date": "2021-06",
+          "n": 1
+        },
+        {
+          "date": "2021-07",
+          "n": 3
+        },
+        {
+          "date": "2021-08",
+          "n": 4
+        },
+        {
+          "date": "2021-09",
+          "n": 2
+        },
+        {
+          "date": "2021-10",
+          "n": 2
+        },
+        {
+          "date": "2021-11",
+          "n": 4
+        },
+        {
+          "date": "2021-12",
+          "n": 6
+        },
+        {
+          "date": "2022-01",
+          "n": 7
+        },
+        {
+          "date": "2022-02",
+          "n": 0
+        },
+        {
+          "date": "2022-03",
+          "n": 1
+        },
+        {
+          "date": "2022-04",
+          "n": 0
+        },
+        {
+          "date": "2022-05",
+          "n": 2
+        },
+        {
+          "date": "2022-06",
+          "n": 0
+        },
+        {
+          "date": "2022-07",
+          "n": 0
+        },
+        {
+          "date": "2022-08",
+          "n": 2
+        },
+        {
+          "date": "2022-09",
+          "n": 0
+        },
+        {
+          "date": "2022-10",
+          "n": 1
+        },
+        {
+          "date": "2022-11",
+          "n": 0
+        },
+        {
+          "date": "2022-12",
+          "n": 1
+        },
+        {
+          "date": "2023-01",
+          "n": 0
+        },
+        {
+          "date": "2023-02",
+          "n": 0
+        },
+        {
+          "date": "2023-03",
+          "n": 0
+        },
+        {
+          "date": "2023-04",
+          "n": 0
+        },
+        {
+          "date": "2023-05",
+          "n": 0
+        },
+        {
+          "date": "2023-06",
+          "n": 0
+        },
+        {
+          "date": "2023-07",
+          "n": 0
+        },
+        {
+          "date": "2023-08",
+          "n": 2
+        },
+        {
+          "date": "2023-09",
+          "n": 0
+        },
+        {
+          "date": "2023-10",
+          "n": 0
+        },
+        {
+          "date": "2023-11",
+          "n": 1
+        },
+        {
+          "date": "2023-12",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "ICAL",
+      "name": "ICAL",
+      "total": 38,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ical.png",
+      "data": [
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 1
+        },
+        {
+          "date": "2023-04",
+          "n": 8
+        },
+        {
+          "date": "2023-05",
+          "n": 0
+        },
+        {
+          "date": "2023-06",
+          "n": 3
+        },
+        {
+          "date": "2023-07",
+          "n": 3
+        },
+        {
+          "date": "2023-08",
+          "n": 7
+        },
+        {
+          "date": "2023-09",
+          "n": 9
+        },
+        {
+          "date": "2023-10",
+          "n": 5
+        },
+        {
+          "date": "2023-11",
+          "n": 0
+        },
+        {
+          "date": "2023-12",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "IES",
+      "name": "IES",
+      "total": 20,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ies.webp",
+      "data": [
+        {
+          "date": "2019-03",
+          "n": 1
+        },
+        {
+          "date": "2019-10",
+          "n": 1
+        },
+        {
+          "date": "2019-12",
+          "n": 1
+        },
+        {
+          "date": "2020-09",
+          "n": 2
+        },
+        {
+          "date": "2020-11",
+          "n": 1
+        },
+        {
+          "date": "2021-10",
+          "n": 1
+        },
+        {
+          "date": "2022-02",
+          "n": 1
+        },
+        {
+          "date": "2022-04",
+          "n": 2
+        },
+        {
+          "date": "2022-10",
+          "n": 1
+        },
+        {
+          "date": "2023-04",
+          "n": 2
+        },
+        {
+          "date": "2023-06",
+          "n": 1
+        },
+        {
+          "date": "2023-08",
+          "n": 1
+        },
+        {
+          "date": "2023-09",
+          "n": 3
+        },
+        {
+          "date": "2023-10",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "id": "IdeaPais",
+      "name": "Idea País",
+      "total": 3,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ideapais.png",
+      "data": [
+        {
+          "date": "2020-08",
+          "n": 1
+        },
+        {
+          "date": "2021-08",
+          "n": 1
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "IdeasRep",
+      "name": "Ideas Republicanas",
+      "total": 9,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ideasrepublicanas.png",
+      "data": [
+        {
+          "date": "2023-01",
+          "n": 1
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 1
+        },
+        {
+          "date": "2023-05",
+          "n": 1
+        },
+        {
+          "date": "2023-06",
+          "n": 1
+        },
+        {
+          "date": "2023-08",
+          "n": 1
+        },
+        {
+          "date": "2023-09",
+          "n": 1
+        },
+        {
+          "date": "2023-10",
+          "n": 1
+        },
+        {
+          "date": "2023-11",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "Igualdad",
+      "name": "Instituto Igualdad",
+      "total": 892,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutoigualdad.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 8
+        },
+        {
+          "date": "2019-03",
+          "n": 7
+        },
+        {
+          "date": "2019-04",
+          "n": 4
+        },
+        {
+          "date": "2019-05",
+          "n": 5
+        },
+        {
+          "date": "2019-06",
+          "n": 13
+        },
+        {
+          "date": "2019-07",
+          "n": 9
+        },
+        {
+          "date": "2019-08",
+          "n": 18
+        },
+        {
+          "date": "2019-09",
+          "n": 29
+        },
+        {
+          "date": "2019-10",
+          "n": 37
+        },
+        {
+          "date": "2019-11",
+          "n": 24
+        },
+        {
+          "date": "2019-12",
+          "n": 36
+        },
+        {
+          "date": "2020-01",
+          "n": 29
+        },
+        {
+          "date": "2020-03",
+          "n": 19
+        },
+        {
+          "date": "2020-04",
+          "n": 27
+        },
+        {
+          "date": "2020-05",
+          "n": 21
+        },
+        {
+          "date": "2020-06",
+          "n": 35
+        },
+        {
+          "date": "2020-07",
+          "n": 40
+        },
+        {
+          "date": "2020-08",
+          "n": 57
+        },
+        {
+          "date": "2020-09",
+          "n": 42
+        },
+        {
+          "date": "2020-10",
+          "n": 36
+        },
+        {
+          "date": "2020-11",
+          "n": 42
+        },
+        {
+          "date": "2020-12",
+          "n": 26
+        },
+        {
+          "date": "2021-01",
+          "n": 21
+        },
+        {
+          "date": "2021-02",
+          "n": 21
+        },
+        {
+          "date": "2021-03",
+          "n": 23
+        },
+        {
+          "date": "2021-04",
+          "n": 29
+        },
+        {
+          "date": "2021-05",
+          "n": 14
+        },
+        {
+          "date": "2021-06",
+          "n": 8
+        },
+        {
+          "date": "2021-07",
+          "n": 10
+        },
+        {
+          "date": "2021-08",
+          "n": 6
+        },
+        {
+          "date": "2021-09",
+          "n": 3
+        },
+        {
+          "date": "2021-10",
+          "n": 9
+        },
+        {
+          "date": "2021-11",
+          "n": 8
+        },
+        {
+          "date": "2021-12",
+          "n": 4
+        },
+        {
+          "date": "2022-01",
+          "n": 9
+        },
+        {
+          "date": "2022-02",
+          "n": 4
+        },
+        {
+          "date": "2022-03",
+          "n": 6
+        },
+        {
+          "date": "2022-04",
+          "n": 6
+        },
+        {
+          "date": "2022-05",
+          "n": 10
+        },
+        {
+          "date": "2022-06",
+          "n": 12
+        },
+        {
+          "date": "2022-07",
+          "n": 9
+        },
+        {
+          "date": "2022-08",
+          "n": 12
+        },
+        {
+          "date": "2022-09",
+          "n": 7
+        },
+        {
+          "date": "2022-10",
+          "n": 10
+        },
+        {
+          "date": "2022-11",
+          "n": 13
+        },
+        {
+          "date": "2022-12",
+          "n": 2
+        },
+        {
+          "date": "2023-01",
+          "n": 4
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 5
+        },
+        {
+          "date": "2023-04",
+          "n": 7
+        },
+        {
+          "date": "2023-05",
+          "n": 7
+        },
+        {
+          "date": "2023-06",
+          "n": 8
+        },
+        {
+          "date": "2023-07",
+          "n": 9
+        },
+        {
+          "date": "2023-08",
+          "n": 12
+        },
+        {
+          "date": "2023-09",
+          "n": 6
+        },
+        {
+          "date": "2023-10",
+          "n": 3
+        },
+        {
+          "date": "2023-11",
+          "n": 4
+        },
+        {
+          "date": "2023-12",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "id": "Libertad",
+      "name": "Instituto Libertad",
+      "total": 124,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutolibertad.png",
+      "data": [
+        {
+          "date": "2022-02",
+          "n": 3
+        },
+        {
+          "date": "2022-03",
+          "n": 1
+        },
+        {
+          "date": "2022-04",
+          "n": 5
+        },
+        {
+          "date": "2022-05",
+          "n": 8
+        },
+        {
+          "date": "2022-06",
+          "n": 7
+        },
+        {
+          "date": "2022-07",
+          "n": 6
+        },
+        {
+          "date": "2022-08",
+          "n": 5
+        },
+        {
+          "date": "2022-09",
+          "n": 2
+        },
+        {
+          "date": "2022-10",
+          "n": 2
+        },
+        {
+          "date": "2022-11",
+          "n": 2
+        },
+        {
+          "date": "2022-12",
+          "n": 16
+        },
+        {
+          "date": "2023-01",
+          "n": 9
+        },
+        {
+          "date": "2023-02",
+          "n": 5
+        },
+        {
+          "date": "2023-03",
+          "n": 7
+        },
+        {
+          "date": "2023-04",
+          "n": 2
+        },
+        {
+          "date": "2023-05",
+          "n": 5
+        },
+        {
+          "date": "2023-06",
+          "n": 7
+        },
+        {
+          "date": "2023-07",
+          "n": 5
+        },
+        {
+          "date": "2023-08",
+          "n": 5
+        },
+        {
+          "date": "2023-09",
+          "n": 6
+        },
+        {
+          "date": "2023-10",
+          "n": 5
+        },
+        {
+          "date": "2023-11",
+          "n": 6
+        },
+        {
+          "date": "2023-12",
+          "n": 5
+        }
+      ]
+    },
+    {
+      "id": "ResPublica",
+      "name": "Instituto Res Pública",
+      "total": 575,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutorepublica.png",
+      "data": [
+        {
+          "date": "2019-04",
+          "n": 5
+        },
+        {
+          "date": "2019-08",
+          "n": 3
+        },
+        {
+          "date": "2019-10",
+          "n": 4
+        },
+        {
+          "date": "2019-11",
+          "n": 1
+        },
+        {
+          "date": "2019-12",
+          "n": 2
+        },
+        {
+          "date": "2020-01",
+          "n": 7
+        },
+        {
+          "date": "2020-02",
+          "n": 1
+        },
+        {
+          "date": "2020-03",
+          "n": 5
+        },
+        {
+          "date": "2020-05",
+          "n": 2
+        },
+        {
+          "date": "2020-06",
+          "n": 6
+        },
+        {
+          "date": "2020-07",
+          "n": 2
+        },
+        {
+          "date": "2020-08",
+          "n": 8
+        },
+        {
+          "date": "2020-09",
+          "n": 9
+        },
+        {
+          "date": "2020-10",
+          "n": 5
+        },
+        {
+          "date": "2020-11",
+          "n": 7
+        },
+        {
+          "date": "2020-12",
+          "n": 5
+        },
+        {
+          "date": "2021-01",
+          "n": 13
+        },
+        {
+          "date": "2021-02",
+          "n": 14
+        },
+        {
+          "date": "2021-03",
+          "n": 11
+        },
+        {
+          "date": "2021-04",
+          "n": 10
+        },
+        {
+          "date": "2021-05",
+          "n": 8
+        },
+        {
+          "date": "2021-06",
+          "n": 12
+        },
+        {
+          "date": "2021-07",
+          "n": 18
+        },
+        {
+          "date": "2021-08",
+          "n": 20
+        },
+        {
+          "date": "2021-09",
+          "n": 16
+        },
+        {
+          "date": "2021-10",
+          "n": 24
+        },
+        {
+          "date": "2021-11",
+          "n": 14
+        },
+        {
+          "date": "2021-12",
+          "n": 18
+        },
+        {
+          "date": "2022-01",
+          "n": 9
+        },
+        {
+          "date": "2022-02",
+          "n": 13
+        },
+        {
+          "date": "2022-03",
+          "n": 9
+        },
+        {
+          "date": "2022-04",
+          "n": 9
+        },
+        {
+          "date": "2022-05",
+          "n": 12
+        },
+        {
+          "date": "2022-06",
+          "n": 5
+        },
+        {
+          "date": "2022-07",
+          "n": 12
+        },
+        {
+          "date": "2022-08",
+          "n": 6
+        },
+        {
+          "date": "2022-09",
+          "n": 7
+        },
+        {
+          "date": "2022-10",
+          "n": 10
+        },
+        {
+          "date": "2022-11",
+          "n": 11
+        },
+        {
+          "date": "2022-12",
+          "n": 10
+        },
+        {
+          "date": "2023-01",
+          "n": 17
+        },
+        {
+          "date": "2023-02",
+          "n": 11
+        },
+        {
+          "date": "2023-03",
+          "n": 14
+        },
+        {
+          "date": "2023-04",
+          "n": 20
+        },
+        {
+          "date": "2023-05",
+          "n": 24
+        },
+        {
+          "date": "2023-06",
+          "n": 17
+        },
+        {
+          "date": "2023-07",
+          "n": 28
+        },
+        {
+          "date": "2023-08",
+          "n": 27
+        },
+        {
+          "date": "2023-09",
+          "n": 17
+        },
+        {
+          "date": "2023-10",
+          "n": 15
+        },
+        {
+          "date": "2023-11",
+          "n": 13
+        },
+        {
+          "date": "2023-12",
+          "n": 9
+        }
+      ]
+    },
+    {
+      "id": "LyD",
+      "name": "LyD",
+      "total": 2622,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/lyd1536x1299.png",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 50
+        },
+        {
+          "date": "2019-02",
+          "n": 30
+        },
+        {
+          "date": "2019-03",
+          "n": 51
+        },
+        {
+          "date": "2019-04",
+          "n": 57
+        },
+        {
+          "date": "2019-05",
+          "n": 61
+        },
+        {
+          "date": "2019-06",
+          "n": 55
+        },
+        {
+          "date": "2019-07",
+          "n": 52
+        },
+        {
+          "date": "2019-08",
+          "n": 51
+        },
+        {
+          "date": "2019-09",
+          "n": 43
+        },
+        {
+          "date": "2019-10",
+          "n": 59
+        },
+        {
+          "date": "2019-11",
+          "n": 48
+        },
+        {
+          "date": "2019-12",
+          "n": 49
+        },
+        {
+          "date": "2020-01",
+          "n": 41
+        },
+        {
+          "date": "2020-02",
+          "n": 23
+        },
+        {
+          "date": "2020-03",
+          "n": 56
+        },
+        {
+          "date": "2020-04",
+          "n": 66
+        },
+        {
+          "date": "2020-05",
+          "n": 57
+        },
+        {
+          "date": "2020-06",
+          "n": 53
+        },
+        {
+          "date": "2020-07",
+          "n": 53
+        },
+        {
+          "date": "2020-08",
+          "n": 42
+        },
+        {
+          "date": "2020-09",
+          "n": 40
+        },
+        {
+          "date": "2020-10",
+          "n": 44
+        },
+        {
+          "date": "2020-11",
+          "n": 40
+        },
+        {
+          "date": "2020-12",
+          "n": 38
+        },
+        {
+          "date": "2021-01",
+          "n": 41
+        },
+        {
+          "date": "2021-02",
+          "n": 18
+        },
+        {
+          "date": "2021-03",
+          "n": 43
+        },
+        {
+          "date": "2021-04",
+          "n": 44
+        },
+        {
+          "date": "2021-05",
+          "n": 52
+        },
+        {
+          "date": "2021-06",
+          "n": 41
+        },
+        {
+          "date": "2021-07",
+          "n": 35
+        },
+        {
+          "date": "2021-08",
+          "n": 47
+        },
+        {
+          "date": "2021-09",
+          "n": 48
+        },
+        {
+          "date": "2021-10",
+          "n": 39
+        },
+        {
+          "date": "2021-11",
+          "n": 49
+        },
+        {
+          "date": "2021-12",
+          "n": 49
+        },
+        {
+          "date": "2022-01",
+          "n": 38
+        },
+        {
+          "date": "2022-02",
+          "n": 24
+        },
+        {
+          "date": "2022-03",
+          "n": 40
+        },
+        {
+          "date": "2022-04",
+          "n": 47
+        },
+        {
+          "date": "2022-05",
+          "n": 49
+        },
+        {
+          "date": "2022-06",
+          "n": 57
+        },
+        {
+          "date": "2022-07",
+          "n": 49
+        },
+        {
+          "date": "2022-08",
+          "n": 57
+        },
+        {
+          "date": "2022-09",
+          "n": 36
+        },
+        {
+          "date": "2022-10",
+          "n": 40
+        },
+        {
+          "date": "2022-11",
+          "n": 27
+        },
+        {
+          "date": "2022-12",
+          "n": 33
+        },
+        {
+          "date": "2023-01",
+          "n": 32
+        },
+        {
+          "date": "2023-02",
+          "n": 19
+        },
+        {
+          "date": "2023-03",
+          "n": 35
+        },
+        {
+          "date": "2023-04",
+          "n": 35
+        },
+        {
+          "date": "2023-05",
+          "n": 47
+        },
+        {
+          "date": "2023-06",
+          "n": 41
+        },
+        {
+          "date": "2023-07",
+          "n": 33
+        },
+        {
+          "date": "2023-08",
+          "n": 39
+        },
+        {
+          "date": "2023-09",
+          "n": 36
+        },
+        {
+          "date": "2023-10",
+          "n": 42
+        },
+        {
+          "date": "2023-11",
+          "n": 60
+        },
+        {
+          "date": "2023-12",
+          "n": 41
+        }
+      ]
+    },
+    {
+      "id": "NodoXXI",
+      "name": "Nodo XXI",
+      "total": 328,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/nodoxxi.webp",
+      "data": [
+        {
+          "date": "2019-07",
+          "n": 2
+        },
+        {
+          "date": "2019-08",
+          "n": 1
+        },
+        {
+          "date": "2019-09",
+          "n": 3
+        },
+        {
+          "date": "2019-10",
+          "n": 3
+        },
+        {
+          "date": "2019-11",
+          "n": 6
+        },
+        {
+          "date": "2019-12",
+          "n": 3
+        },
+        {
+          "date": "2020-01",
+          "n": 1
+        },
+        {
+          "date": "2020-03",
+          "n": 14
+        },
+        {
+          "date": "2020-04",
+          "n": 25
+        },
+        {
+          "date": "2020-05",
+          "n": 12
+        },
+        {
+          "date": "2020-06",
+          "n": 11
+        },
+        {
+          "date": "2020-07",
+          "n": 8
+        },
+        {
+          "date": "2020-08",
+          "n": 12
+        },
+        {
+          "date": "2020-09",
+          "n": 3
+        },
+        {
+          "date": "2020-10",
+          "n": 5
+        },
+        {
+          "date": "2020-11",
+          "n": 1
+        },
+        {
+          "date": "2020-12",
+          "n": 2
+        },
+        {
+          "date": "2021-01",
+          "n": 13
+        },
+        {
+          "date": "2021-02",
+          "n": 1
+        },
+        {
+          "date": "2021-03",
+          "n": 9
+        },
+        {
+          "date": "2021-04",
+          "n": 3
+        },
+        {
+          "date": "2021-06",
+          "n": 1
+        },
+        {
+          "date": "2021-07",
+          "n": 1
+        },
+        {
+          "date": "2021-08",
+          "n": 1
+        },
+        {
+          "date": "2021-09",
+          "n": 5
+        },
+        {
+          "date": "2021-10",
+          "n": 11
+        },
+        {
+          "date": "2021-11",
+          "n": 13
+        },
+        {
+          "date": "2021-12",
+          "n": 2
+        },
+        {
+          "date": "2022-01",
+          "n": 10
+        },
+        {
+          "date": "2022-05",
+          "n": 1
+        },
+        {
+          "date": "2022-06",
+          "n": 1
+        },
+        {
+          "date": "2022-07",
+          "n": 12
+        },
+        {
+          "date": "2022-08",
+          "n": 4
+        },
+        {
+          "date": "2022-10",
+          "n": 8
+        },
+        {
+          "date": "2022-11",
+          "n": 2
+        },
+        {
+          "date": "2022-12",
+          "n": 4
+        },
+        {
+          "date": "2023-01",
+          "n": 3
+        },
+        {
+          "date": "2023-02",
+          "n": 1
+        },
+        {
+          "date": "2023-03",
+          "n": 8
+        },
+        {
+          "date": "2023-05",
+          "n": 3
+        },
+        {
+          "date": "2023-06",
+          "n": 4
+        },
+        {
+          "date": "2023-07",
+          "n": 27
+        },
+        {
+          "date": "2023-10",
+          "n": 27
+        },
+        {
+          "date": "2023-11",
+          "n": 20
+        },
+        {
+          "date": "2023-12",
+          "n": 21
+        }
+      ]
+    },
+    {
+      "id": "OPES",
+      "name": "OPES",
+      "total": 45,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/opes.webp",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 1
+        },
+        {
+          "date": "2019-04",
+          "n": 1
+        },
+        {
+          "date": "2019-09",
+          "n": 1
+        },
+        {
+          "date": "2019-10",
+          "n": 1
+        },
+        {
+          "date": "2020-01",
+          "n": 1
+        },
+        {
+          "date": "2020-03",
+          "n": 1
+        },
+        {
+          "date": "2020-07",
+          "n": 1
+        },
+        {
+          "date": "2020-08",
+          "n": 2
+        },
+        {
+          "date": "2020-09",
+          "n": 4
+        },
+        {
+          "date": "2020-10",
+          "n": 3
+        },
+        {
+          "date": "2020-11",
+          "n": 1
+        },
+        {
+          "date": "2020-12",
+          "n": 4
+        },
+        {
+          "date": "2021-01",
+          "n": 1
+        },
+        {
+          "date": "2021-04",
+          "n": 2
+        },
+        {
+          "date": "2021-05",
+          "n": 2
+        },
+        {
+          "date": "2021-06",
+          "n": 3
+        },
+        {
+          "date": "2021-07",
+          "n": 2
+        },
+        {
+          "date": "2021-08",
+          "n": 1
+        },
+        {
+          "date": "2022-08",
+          "n": 1
+        },
+        {
+          "date": "2023-10",
+          "n": 8
+        },
+        {
+          "date": "2023-12",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "id": "Pivotes",
+      "name": "Pivotes",
+      "total": 412,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/pivotes.png",
+      "data": [
+        {
+          "date": "2022-11",
+          "n": 1
+        },
+        {
+          "date": "2022-12",
+          "n": 16
+        },
+        {
+          "date": "2023-01",
+          "n": 5
+        },
+        {
+          "date": "2023-02",
+          "n": 5
+        },
+        {
+          "date": "2023-03",
+          "n": 122
+        },
+        {
+          "date": "2023-04",
+          "n": 23
+        },
+        {
+          "date": "2023-05",
+          "n": 11
+        },
+        {
+          "date": "2023-06",
+          "n": 6
+        },
+        {
+          "date": "2023-07",
+          "n": 57
+        },
+        {
+          "date": "2023-08",
+          "n": 35
+        },
+        {
+          "date": "2023-09",
+          "n": 32
+        },
+        {
+          "date": "2023-10",
+          "n": 29
+        },
+        {
+          "date": "2023-11",
+          "n": 31
+        },
+        {
+          "date": "2023-12",
+          "n": 39
+        }
+      ]
+    },
+    {
+      "id": "SignosUandes",
+      "name": "Signos Uandes",
+      "total": 3612,
+      "logoUrl": "https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/signosuandes.svg",
+      "data": [
+        {
+          "date": "2019-01",
+          "n": 53
+        },
+        {
+          "date": "2019-02",
+          "n": 20
+        },
+        {
+          "date": "2019-03",
+          "n": 67
+        },
+        {
+          "date": "2019-04",
+          "n": 83
+        },
+        {
+          "date": "2019-05",
+          "n": 88
+        },
+        {
+          "date": "2019-06",
+          "n": 84
+        },
+        {
+          "date": "2019-07",
+          "n": 83
+        },
+        {
+          "date": "2019-08",
+          "n": 87
+        },
+        {
+          "date": "2019-09",
+          "n": 89
+        },
+        {
+          "date": "2019-10",
+          "n": 88
+        },
+        {
+          "date": "2019-11",
+          "n": 77
+        },
+        {
+          "date": "2019-12",
+          "n": 78
+        },
+        {
+          "date": "2020-01",
+          "n": 71
+        },
+        {
+          "date": "2020-02",
+          "n": 10
+        },
+        {
+          "date": "2020-03",
+          "n": 59
+        },
+        {
+          "date": "2020-04",
+          "n": 70
+        },
+        {
+          "date": "2020-05",
+          "n": 66
+        },
+        {
+          "date": "2020-06",
+          "n": 69
+        },
+        {
+          "date": "2020-07",
+          "n": 74
+        },
+        {
+          "date": "2020-08",
+          "n": 56
+        },
+        {
+          "date": "2020-09",
+          "n": 67
+        },
+        {
+          "date": "2020-10",
+          "n": 79
+        },
+        {
+          "date": "2020-11",
+          "n": 63
+        },
+        {
+          "date": "2020-12",
+          "n": 62
+        },
+        {
+          "date": "2021-01",
+          "n": 45
+        },
+        {
+          "date": "2021-02",
+          "n": 5
+        },
+        {
+          "date": "2021-03",
+          "n": 63
+        },
+        {
+          "date": "2021-04",
+          "n": 65
+        },
+        {
+          "date": "2021-05",
+          "n": 46
+        },
+        {
+          "date": "2021-06",
+          "n": 68
+        },
+        {
+          "date": "2021-07",
+          "n": 55
+        },
+        {
+          "date": "2021-08",
+          "n": 66
+        },
+        {
+          "date": "2021-09",
+          "n": 54
+        },
+        {
+          "date": "2021-10",
+          "n": 66
+        },
+        {
+          "date": "2021-11",
+          "n": 71
+        },
+        {
+          "date": "2021-12",
+          "n": 64
+        },
+        {
+          "date": "2022-01",
+          "n": 55
+        },
+        {
+          "date": "2022-02",
+          "n": 3
+        },
+        {
+          "date": "2022-03",
+          "n": 52
+        },
+        {
+          "date": "2022-04",
+          "n": 59
+        },
+        {
+          "date": "2022-05",
+          "n": 59
+        },
+        {
+          "date": "2022-06",
+          "n": 54
+        },
+        {
+          "date": "2022-07",
+          "n": 61
+        },
+        {
+          "date": "2022-08",
+          "n": 59
+        },
+        {
+          "date": "2022-09",
+          "n": 54
+        },
+        {
+          "date": "2022-10",
+          "n": 64
+        },
+        {
+          "date": "2022-11",
+          "n": 62
+        },
+        {
+          "date": "2022-12",
+          "n": 56
+        },
+        {
+          "date": "2023-01",
+          "n": 41
+        },
+        {
+          "date": "2023-02",
+          "n": 5
+        },
+        {
+          "date": "2023-03",
+          "n": 57
+        },
+        {
+          "date": "2023-04",
+          "n": 49
+        },
+        {
+          "date": "2023-05",
+          "n": 53
+        },
+        {
+          "date": "2023-06",
+          "n": 75
+        },
+        {
+          "date": "2023-07",
+          "n": 55
+        },
+        {
+          "date": "2023-08",
+          "n": 70
+        },
+        {
+          "date": "2023-09",
+          "n": 53
+        },
+        {
+          "date": "2023-10",
+          "n": 65
+        },
+        {
+          "date": "2023-11",
+          "n": 85
+        },
+        {
+          "date": "2023-12",
+          "n": 55
+        }
+      ]
+    }
+  ]
+}
