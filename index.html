@@ -1,78 +1,1647 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación XII Conferencia Internacional COES Octubre 2025</title>
-<link rel="stylesheet" href="style.css">
+    <title>Presentación COES</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
-    <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
-    <script src="https://d3js.org/d3-force.v2.min.js"></script>
-    <script src="https://d3js.org/d3-hierarchy.v2.min.js"></script>
-    <script src="https://d3js.org/d3-sankey.v0.10.0.min.js"></script>
-    <script src="https://d3js.org/d3-chord.v2.min.js"></script>
-    <script src="https://d3js.org/d3-brush.v2.min.js"></script>
-    <script src="https://d3js.org/d3-shape.v2.min.js"></script>
-    <script src="https://d3js.org/d3-array.v2.min.js"></script>
-    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
-    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
-    <script src="https://d3js.org/d3-selection.v2.min.js"></script>
-    <script src="https://d3js.org/d3-transition.v2.min.js"></script>
-    <script src="https://d3js.org/d3-dispatch.v2.min.js"></script>
-    <script src="https://d3js.org/d3-timer.v2.min.js"></script>
-    <script src="https://d3js.org/d3-ease.v2.min.js"></script>
-    <script src="https://d3js.org/d3-drag.v2.min.js"></script>
-    <script src="https://d3js.org/d3-quadtree.v2.min.js"></script>
-    <script src="https://d3js.org/d3-collection.v2.min.js"></script>
-    <script src="https://d3js.org/d3-format.v2.min.js"></script>
-    <script src="https://d3js.org/d3-time.v2.min.js"></script>
-    <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
-</head>
-<body class="font-sans tracking-tight antialiased bg-slate-900 text-slate-100">
-    <div id="app" class="min-h-screen flex flex-col overflow-hidden">
-        <div id="slides-wrapper" class="flex-1 relative">
-            <div id="slides-container" class="flex h-full transition-transform duration-700 ease-in-out">
-                <!-- Slides will be injected here -->
-            </div>
-        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Raleway', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    spacing: {
+                        'phi': '1.618rem',
+                        'phi2': '2.618rem',
+                        'phi3': '4.236rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            font-family: 'Raleway', sans-serif;
+        }
         
-        <!-- Navigation Controls -->
-        <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-            <div class="bg-slate-800/90 backdrop-blur-lg rounded-full px-6 py-3 flex items-center gap-6 shadow-2xl border border-slate-700">
-                <button id="prev-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white">
-                    <i data-feather="chevron-left" class="w-5 h-5"></i>
-                </button>
-                <div id="slide-indicator" class="flex items-center gap-3">
-                    <div class="flex gap-1" id="dots-container">
-                        <!-- Dots will be injected here -->
-                    </div>
-                    <span id="slide-counter" class="text-sm text-slate-400 font-mono">1/11</span>
-                </div>
-                <button id="next-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white">
-                    <i data-feather="chevron-right" class="w-5 h-5"></i>
-                </button>
-                <button id="fullscreen-btn" class="p-2 rounded-full hover:bg-slate-700 transition-all duration-300 text-slate-300 hover:text-white ml-2">
-                    <i data-feather="maximize" class="w-5 h-5"></i>
-                </button>
-            </div>
-        </div>
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .golden-grid {
+            display: grid;
+            grid-template-columns: 62% 38%;
+            height: 100%;
+            gap: 1.618rem;
+        }
+        
+        .reverse-golden {
+            grid-template-columns: 38% 62%;
+        }
+        
+        .graph-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .graph-node {
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .focus-element {
+            transition: all 1s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .tooltip {
+            position: absolute;
+            padding: 0.618rem;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 0.382rem;
+            pointer-events: none;
+            font-size: 0.9rem;
+            max-width: 280px;
+            z-index: 100;
+        }
+        
+        .slide-indicator {
+            position: fixed;
+            bottom: 1.618rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.618rem;
+            z-index: 50;
+        }
+        
+        .indicator-node {
+            width: 0.618rem;
+            height: 0.618rem;
+            border-radius: 50%;
+            background: rgba(148, 163, 184, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .indicator-node.active {
+            background: #d3e6fe;
+            transform: scale(1.382);
+        }
+        
+        .navigation-buttons {
+            position: fixed;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 50;
+        }
+        
+        .nav-btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            color: #d3e6fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(51, 65, 85, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .topic-node {
+            stroke: #fff;
+            stroke-width: 2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .topic-node:hover {
+            stroke-width: 3;
+        }
+        
+        .topic-label {
+            font-size: 0.8rem;
+            fill: #fff;
+            font-weight: 500;
+            pointer-events: none;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.618rem;
+            margin-bottom: 0.618rem;
+        }
+        
+        .legend-color {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 3px;
+        }
+        
+        .data-card {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 0.618rem;
+            padding: 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .data-card:hover {
+            transform: translateY(-0.382rem);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .transition-element {
+            transition: all 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            background-image: linear-gradient(45deg, #ffecd2, #fcb69f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            letter-spacing: -0.05em;
+        }
+        
+        @media (max-width: 768px) {
+            .golden-grid, .reverse-golden {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .graph-container {
+                height: 50vh;
+            }
+            .embed-frame {
+                 width: 100%;
+                height: 100%;
+                border: 1px solid rgba(148, 163, 184, 0.25);
+                border-radius: 0.75rem;         /* mismo look que las cards */
+                background: #0b1220;            /* fallback oscuro mientras carga */
+            }
+            /* Marco sutil para iframes embebidos */
+.embed-card {
+  /* ya damos border, blur y shadow con Tailwind; aquí afinamos el “vignette” interno */
+  position: relative;
+}
 
-        <!-- Background Graph Visualization -->
-        <div id="background-graph" class="fixed inset-0 pointer-events-none opacity-20">
-            <svg id="bg-svg" class="w-full h-full"></svg>
-        </div>
+.embed-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  /* línea interior + viñeta suave para separar del fondo */
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Asegura que el iframe no muestre bordes propios y respete el radio */
+.embed-frame {
+  border: 0;
+}
+
+
+/* Marco y layout de la columna izquierda */
+#slide2 .diagram-card{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+#slide2 .diagram-frame{
+  position: relative;
+  width: 100%;
+  /* relación agradable al diagrama, ocupa bien el alto disponible */
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+  background: radial-gradient(120% 120% at 20% 0%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 60%, transparent 100%);
+}
+#slide2 .diagram-caption{
+  font-family: Inter, Manrope, Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 0.9rem;
+  color: rgba(230,234,242,.75);
+  text-align: right;
+  padding-right: 6px;
+}
+
+/* El SVG se adapta al marco */
+#slide2 .diagram-frame .svg-wrap{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#slide2 .diagram-frame svg{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* === OVERRIDES: pasar todo a BLANCO sin tocar tu SVG === */
+#slide2 .diagram-frame svg .box{ stroke:#fff !important; }
+#slide2 .diagram-frame svg .dash{ stroke:#fff !important; }
+#slide2 .diagram-frame svg .title,
+#slide2 .diagram-frame svg .label{ fill:#fff !important; }
+
+/* Estado base suave para que no compita con el texto */
+#slide2 .diagram-frame svg .box,
+#slide2 .diagram-frame svg .dash{
+  opacity:.55;
+  transition: opacity .25s ease, filter .25s ease, stroke-width .25s ease;
+}
+
+/* Highlight secuencial */
+#slide2 .diagram-frame svg .hl{
+  opacity:1;
+  stroke-width:3.2;
+  filter: drop-shadow(0 0 12px rgba(160,220,255,.55)) drop-shadow(0 0 24px rgba(120,190,255,.35));
+}
+
+/* Cuando el marco recibe focus/hover, hacemos pausa suave del brillo (opcional) */
+#slide2 .diagram-card:hover .hl{
+  filter: drop-shadow(0 0 10px rgba(160,220,255,.4)) drop-shadow(0 0 18px rgba(120,190,255,.25));
+}
+
+
+
+        }
+    </style>
+</head>
+<body class="text-slate-200 tracking-tight antialiased">
+    <div class="slides-container" style="position: relative; width: 100vw; height: 100vh;">
+        <!-- Slide 1: Portada -->
+        <!-- Slide 1: Portada -->
+<div id="slide1" class="slide">
+  <!-- Fondo -->
+  <div class="absolute inset-0 opacity-20"
+       style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80'); background-size: cover;">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-sky-900/50 to-indigo-900/50"></div>
+
+  <!-- Contenido principal -->
+  <div class="container mx-auto h-full flex flex-col items-center justify-center relative z-10">
+    <div class="text-center">
+      <h1 class="hero-title font-heading font-bold mb-4">
+        Conocimiento experto en tiempos convulsos: Think tanks durante las crisis políticas de Chile (2019-2023)
+      </h1>
+      <h2 class="text-2xl md:text-3xl font-heading opacity-90 mb-6">XII Conferencia Internacional COES - Octubre 2025</h2>
+
+      <div class="inline-block bg-slate-800/50 backdrop-blur-sm px-8 py-6 rounded-2xl border border-slate-600/50">
+        <p class="text-xl md:text-2xl font-medium mb-2">Marcos González Hernando</p>
+        <p class="text-lg opacity-80 mb-4">Universidad Diego portales - COES</p>
+        <p class="text-xl md:text-2xl font-medium mb-2">Rodrigo Molina Ávila</p>
+        <p class="text-lg opacity-80">Universidad de Chile - IDIA</p>
+      </div>
     </div>
 
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
+    <!-- Indicador “Desliza” -->
+
+  </div>
+
+  <!-- Franja de logos institucionales (centrada abajo) -->
+<!-- Franja de logos institucionales (centrada abajo, más grande) -->
+<div class="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-16 lg:bottom-20 z-10 w-[min(92vw,1100px)]">
+  <div class="pointer-events-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-5
+              px-8 py-5 md:px-12 md:py-6 rounded-3xl
+              bg-slate-900/60 border border-slate-500/35 backdrop-blur-md
+              shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
+    <img src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/udp.png"
+         alt="Universidad Diego Portales"
+         class="h-10 md:h-14 object-contain filter brightness-0 invert" />
+    <img src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/coes.png"
+         alt="COES"
+         class="h-20 md:h-17 object-contain" />
+    <img src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/uchile.png"
+         alt="Universidad de Chile"
+         class="h-20 md:h-17 object-contain" />
+    <img src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/idia_white.png"
+         alt="IDIA - U. de Chile"
+         class="h-20 md:h-17 object-contain" />
+  </div>
+</div>
+
+</div>
+
+<div id="slide2" class="slide" style="left: 100vw;">
+  <!-- Estilos específicos de la slide 2 -->
+  <style>
+    /* Layout y marco columna izquierda */
+    #slide2 .diagram-card{
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+      min-height: 520px;
+    }
+    #slide2 .diagram-frame{
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 14px;
+      background: radial-gradient(120% 120% at 20% 0%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 60%, transparent 100%);
+    }
+    #slide2 .diagram-caption{
+      font-family: Inter, Manrope, Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: 0.9rem;
+      color: rgba(230,234,242,.75);
+      text-align: right;
+      padding-right: 6px;
+    }
+
+    /* El SVG se adapta al marco */
+    #slide2 .diagram-frame .svg-wrap{ width:100%; height:100%; padding:0; margin:0; }
+    #slide2 .diagram-frame svg{ width:100%; height:130%; display:block; }
+
+    /* --- OVERRIDES: todo a blanco sin tocar el SVG --- */
+    #slide2 .diagram-frame svg .box{ stroke:#fff !important; }
+    #slide2 .diagram-frame svg .dash{ stroke:#fff !important; }
+    #slide2 .diagram-frame svg .title,
+    #slide2 .diagram-frame svg .label{ fill:#fff !important; }
+
+    /* Estado base suave (no compite con el texto) */
+    #slide2 .diagram-frame svg .box,
+    #slide2 .diagram-frame svg .dash{
+      opacity:.55;
+      transition: opacity .25s ease, filter .25s ease, stroke-width .25s ease;
+    }
+    /* Highlight secuencial (brillo) */
+    #slide2 .diagram-frame svg .hl{
+      opacity:1;
+      stroke-width:3.2;
+      filter: drop-shadow(0 0 12px rgba(160,220,255,.55)) drop-shadow(0 0 24px rgba(120,190,255,.35));
+    }
+    #slide2 .diagram-card:hover .hl{
+      filter: drop-shadow(0 0 10px rgba(160,220,255,.4)) drop-shadow(0 0 18px rgba(120,190,255,.25));
+    }
+
+    /* Ajustes del contenido derecho (evitar que tape flechas flotantes) */
+    #slide2 .right-col{ padding-right: 2.5rem; }
+    @media (max-width: 1024px){
+      #slide2 .right-col{ padding-right: 0; }
+    }
+    /* ==== centrar verticalmente la columna derecha respecto al marco ==== */
+#slide2 .two-col{
+  /* el grid ocupa buena parte de la pantalla para igualar alturas */
+  min-height: 70vh;
+  align-items: stretch;       /* las dos columnas estiran igual la altura */
+}
+
+#slide2 .right-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* <- centra el contenido en vertical */
+  height: 100%;
+}
+
+/* En móviles vuelve a top para evitar espacios grandes */
+@media (max-width: 1024px){
+  #slide2 .right-col{ justify-content: flex-start; }
+}
+/* ====== SLIDE 2: centrado de párrafos con número pegado a la izquierda ====== */
+#slide2 .right-col .para-wrap{
+  max-width: 46rem;          /* ancho legible */
+  margin-inline: auto;       /* centra el bloque entero */
+  text-align: center;        /* centra el texto (el badge se saca con absolute) */
+}
+
+#slide2 .right-col .para{
+  position: relative;
+  padding-left: 2.5rem;      /* espacio reservado para el badge a la izquierda */
+  line-height: 1.6;
+}
+
+#slide2 .right-col .para .badge{
+  position: absolute;
+  left: 0;                   /* pegado al borde izquierdo del bloque centrado */
+  top: 0.15rem;              /* pequeño ajuste vertical */
+}
+
+@media (max-width: 640px){
+  #slide2 .right-col .para{ padding-left: 2.25rem; }
+}
+
+
+  </style>
+
+  <div class="container mx-auto h-full flex flex-col py-10">
+    <!-- Encabezado -->
+    <div class="text-center mb-6">
+
+    <!-- Dos columnas -->
+<div class="two-col grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Columna izquierda: Marco + SVG + referencia -->
+      <figure class="diagram-card">
+        <div class="diagram-frame">
+          <main class="svg-wrap">
+            <!-- SVG TAL CUAL (NO MODIFICAR) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="1300" height="980" viewBox="0 0 1200 980" role="img" aria-label="Diagrama de campos y espacio de think tanks" id="tt-diagram">
+              <defs>
+                <style type="text/css"><![CDATA[
+                  .box { fill: none; stroke: #000; stroke-width: 2; }
+                  .dash { fill: none; stroke: #000; stroke-width: 2; stroke-dasharray: 6 6; }
+                  .title { font-family: "Montserrat", Georgia, serif; font-size: 25px; text-anchor: middle; dominant-baseline: middle; }
+                  .label { font-family: "Montserrat", Georgia, serif; font-size: 20px; text-anchor: middle; dominant-baseline: middle; }
+                ]]></style>
+              </defs>
+
+              <!-- 1) POLITICAL FIELD -->
+              <rect class="box" x="300" y="60" width="600" height="430" />
+              <text class="title" x="600" y="78">POLITICAL FIELD</text>
+
+              <!-- 2) FIELD OF KNOWLEDGE PRODUCTION -->
+              <rect class="box" x="140" y="170" width="360" height="390" />
+              <text class="title" x="320" y="188">FIELD OF KNOWLEDGE</text>
+              <text class="title" x="320" y="214">PRODUCTION</text>
+
+              <!-- 3) ECONOMIC FIELD -->
+              <rect class="box" x="700" y="170" width="360" height="390" />
+              <text class="title" x="880" y="188">ECONOMIC FIELD</text>
+
+              <!-- 4) MEDIA FIELD -->
+              <rect class="box" x="360" y="430" width="480" height="250" />
+              <text class="title" x="600" y="666">MEDIA FIELD</text>
+
+              <!-- 5) ROMBO CENTRAL -->
+              <polygon class="dash" points="600,212 714,320 600,428 486,320" />
+              <text class="label" x="600" y="312">Space of</text>
+              <text class="label" x="600" y="334">think tanks</text>
+
+              <!-- Conceptos -->
+              <text class="label" x="600" y="130">State agency</text>
+              <text class="label" x="600" y="156">Party</text>
+              <text class="label" x="600" y="182">Social move. org</text>
+
+              <text class="label" x="300" y="318">University</text>
+              <text class="label" x="440" y="262">Public policy</text>
+              <text class="label" x="440" y="282">school</text>
+              <text class="label" x="440" y="364">Academic policy</text>
+              <text class="label" x="440" y="384">research inst</text>
+
+              <text class="label" x="780" y="262">Lobbying</text>
+              <text class="label" x="780" y="282">firm</text>
+              <text class="label" x="780" y="364">Trade</text>
+              <text class="label" x="780" y="384">association</text>
+
+              <text class="label" x="900" y="316">Business corporation</text>
+              <text class="label" x="900" y="338">Labor union</text>
+
+              <text class="label" x="600" y="450">Policy journal</text>
+              <text class="label" x="600" y="470">Political "blogosphere"</text>
+
+              <text class="label" x="420" y="515">Journalism</text>
+              <text class="label" x="420" y="540">school</text>
+
+              <text class="label" x="600" y="540">Newspaper</text>
+
+              <text class="label" x="780" y="515">Commercial</text>
+              <text class="label" x="780" y="540">magazine</text>
+            </svg>
+          </main>
+        </div>
+        <figcaption class="diagram-caption">Medvetz (2023)</figcaption>
+      </figure>
+
+      <!-- Columna derecha: texto -->
+      <div class="right-col">
+  <h2 class="text-5xl lg:text-6xl font-heading font-extrabold mb-6">Intuición inicial</h2>
+
+  <div class="para-wrap space-y-7 text-lg leading-relaxed">
+    <p class="para">
+      <span class="badge inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-300 text-slate-900 font-semibold">1</span>
+      <span>Los think tanks son organizaciones <strong>híbridas</strong> que operan en la intersección de campos—academia, política, medios y financiamiento.</span>
+    </p>
+
+    <p class="para">
+      <span class="badge inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-300 text-slate-900 font-semibold">2</span>
+      <span>Precisamente por ser híbridos, son <strong>sensibles a cambios</strong> en su ambiente.</span>
+    </p>
+
+    <p class="para">
+      <span class="badge inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-300 text-slate-900 font-semibold">3</span>
+      <span>Esto los vuelve indicadores privilegiados de transformaciones de qué actores producen conocimiento experto, qué lenguajes se consideran legítimos y quién tiene acceso a las plataformas para intervenir en el debate público.</span>
+    </p>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: animación secuencial 1.5s por elemento al entrar la slide -->
+ <script>
+  (function () {
+    const slide = document.getElementById('slide2');
+    const svg   = document.getElementById('tt-diagram');
+    if (!slide || !svg) return;
+
+    // Orden: Political → Knowledge → Economic → Media → Rombo
+    const seq = [
+      svg.querySelector('rect.box[x="300"][y="60"]'),
+      svg.querySelector('rect.box[x="140"][y="170"]'),
+      svg.querySelector('rect.box[x="700"][y="170"]'),
+      svg.querySelector('rect.box[x="360"][y="430"]'),
+      svg.querySelector('polygon.dash')
+    ].filter(Boolean);
+
+    const STEP_MS = 1500; // 1.5 s por elemento
+    let idx = 0;
+    let timer = null;
+
+    function highlight(i) {
+      // limpia y enciende solo el actual
+      seq.forEach(el => el.classList.remove('hl'));
+      if (seq[i]) seq[i].classList.add('hl');
+    }
+
+    function step() {
+      highlight(idx);
+      idx = (idx + 1) % seq.length;
+      timer = setTimeout(step, STEP_MS);
+    }
+
+    function start() {
+      if (timer) return;          // ya corriendo
+      step();
+    }
+
+    function stop() {
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+      seq.forEach(el => el.classList.remove('hl'));
+    }
+
+    // Inicia cuando la slide esté visible; se detiene al salir
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) start();
+        else stop();
+      });
+    }, { threshold: 0.35 });
+    io.observe(slide);
+
+    // Pausa si la pestaña queda oculta; reanuda al volver
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else {
+        // Solo reanuda si la slide está visible en viewport
+        const r = slide.getBoundingClientRect();
+        const inView = r.top < window.innerHeight * 0.65 && r.bottom > window.innerHeight * 0.35;
+        if (inView) start();
+      }
+    });
+  })();
+</script>
+
+</div>
+
+<!-- Slide 3: Literatura relevante (FULL-WIDTH BANDS, CENTERED, GOLDEN RATIO) -->
+<div id="slide3" class="slide" style="left: 200vw;">
+  <style>
+    /* ====== Slide 3 layout ====== */
+    #slide3 .wrap {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      gap: 1rem;
+    }
+
+    /* Escala áurea (φ) para tamaños fluidos */
+    #slide3 { --phi: 1.618; }
+    #slide3 .title {
+      /* ~ 3.2–3.8rem según viewport */
+      font-size: clamp(2.6rem, 1.5vw + 2.2rem, 3.8rem);
+      line-height: 1.1;
+    }
+    #slide3 .band-title {
+      /* subtítulos ~ 1.618–2.618 rem */
+      font-size: clamp(1.35rem, 0.9vw + 1.1rem, 2.3rem);
+      line-height: 1.2;
+    }
+    #slide3 .band-list {
+      /* párrafos ~ 1.0–1.25 rem */
+      font-size: clamp(1rem, 0.35vw + 0.9rem, 1.25rem);
+    }
+
+    /* ====== Bandas ====== */
+    #slide3 .bands {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 0;
+    }
+    #slide3 .band {
+      flex: 1 1 0;                       /* tres bandas reparten el alto */
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(3px);
+      display: flex;
+      align-items: center;               /* centra vertical */
+      justify-content: center;           /* centra horizontal */
+      padding: 1.25rem;
+    }
+    #slide3 .band-inner{
+      width: min(1200px, 92vw);          /* ancho legible y centrado */
+      margin-inline: auto;
+      text-align: center;                /* centra títulos y texto */
+    }
+
+    /* Lista centrada pero con punto a la izquierda del texto */
+    #slide3 .band-list{
+      margin-top: .75rem;
+      display: grid;
+      gap: .5rem;
+      justify-items: center;             /* centra cada línea */
+    }
+    #slide3 .band-list li{
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      max-width: 1100px;                 /* para columnas largas */
+    }
+    #slide3 .dot{
+      width: .75rem; height: .75rem; border-radius: 9999px; flex: none;
+      margin-top: .35rem;
+      box-shadow: 0 0 0 2px rgba(255,255,255,.05) inset;
+    }
+  </style>
+
+  <div class="container mx-auto h-full">
+    <div class="wrap">
+      <h3 class="title font-heading font-bold text-center w-full mb-2">Literatura relevante</h3>
+
+      <div class="bands">
+        <!-- Banda 1 -->
+        <section class="band">
+          <div class="band-inner">
+            <h4 class="band-title font-heading font-semibold text-rose-300 mb-3">
+              Think tanks como organizaciones híbridas
+            </h4>
+            <ul class="band-list">
+              <li>
+                <span class="dot" style="background:#fda4af;"></span>
+                <span><strong>Medvetz 2012</strong>: organizaciones que operan en la intersección de campos (academia, política, medios, economía)</span>
+              </li>
+              <li>
+                <span class="dot" style="background:#fda4af;"></span>
+                <span>Traducen capitales y lógicas entre estos campos, tienen una función de “brokers” (Stone)</span>
+              </li>
+              <li>
+                <span class="dot" style="background:#fda4af;"></span>
+                <span>¿Qué pasa cuando los campos mismos se desestabilizan? (Dobry)</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Banda 2 -->
+        <section class="band">
+          <div class="band-inner">
+            <h4 class="band-title font-heading font-semibold text-amber-300 mb-3">
+              Literatura chilena—lo que sabemos y los vacíos
+            </h4>
+            <ul class="band-list">
+              <li>
+                <span class="dot" style="background:#fde68a;"></span>
+                <span>Dictadura y transición bien estudiadas (Puryear, Silva, Gárate), o bien estudios de caso (Morales, Jara)</span>
+              </li>
+              <li>
+                <span class="dot" style="background:#fde68a;"></span>
+                <span>Poco sobre ciclos de vida durante crisis recientes (señalado por Cociña & Toro)</span>
+              </li>
+              <li>
+                <span class="dot" style="background:#fde68a;"></span>
+                <span>Excepciones parciales: Alenda 2020, Dávila 2020, Cortés et al. 2023</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Banda 3 -->
+        <section class="band">
+          <div class="band-inner">
+            <h4 class="band-title font-heading font-semibold text-emerald-300 mb-3">
+              Marco conceptual tentativo: infraestructura intelectual
+            </h4>
+            <ul class="band-list">
+              <li>
+                <span class="dot" style="background:#6ee7b7;"></span>
+                <span>Condiciones materiales e institucionales que permiten intervenciones</span>
+              </li>
+              <li>
+                <span class="dot" style="background:#6ee7b7;"></span>
+                <span>En Chile: financiamiento concentrado, medios oligopolizados, poco financiamiento internacional</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Slide 4: Preguntas de investigación -->
+<div id="slide4" class="slide" style="left: 300vw;">
+  <style>
+    /* Estado base: opacas, texto gris, borde leve */
+    #slide4 .q-card{
+      background: rgba(30,41,59,0.45);
+      border: 1px solid rgba(148,163,184,0.25);
+      color: rgba(226,232,240,0.7);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      transition: all .8s cubic-bezier(.22,.61,.36,1);
+      opacity: .35;
+      backdrop-filter: blur(6px);
+    }
+    /* Encendida (pregunta destacada) */
+    #slide4 .q-card.is-on{
+      opacity: 1;
+      color: #eaf2ff;
+      border-color: rgba(180,210,255,.55);
+      background:
+        radial-gradient(120% 120% at 15% 0%, rgba(255,255,255,.05), transparent 60%),
+        rgba(30,41,59,0.66);
+      box-shadow:
+        inset 0 0 0 1px rgba(180,210,255,.25),
+        0 10px 28px rgba(0,0,0,.35),
+        0 0 22px rgba(120,180,255,.25);
+    }
+    /* La última (más llamativa) */
+    #slide4 .q-card.is-main{
+      border-color: rgba(160,220,255,.85);
+      box-shadow:
+        inset 0 0 0 1px rgba(160,220,255,.35),
+        0 12px 34px rgba(0,0,0,.45),
+        0 0 32px rgba(120,200,255,.55),
+        0 0 60px rgba(80,160,255,.28);
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    /* Tipografías en proporción “aurea” (≈1.618) */
+    #slide4 h3{
+      font-size: clamp(2.25rem, 4vw, 3rem); /* título */
+      line-height: 1.2;
+    }
+    #slide4 .q-card{
+      font-size: clamp(1.375rem, 2.2vw, 1.75rem); /* cuerpo */
+      line-height: 1.5;
+    }
+  </style>
+
+  <div class="container mx-auto h-full flex flex-col items-center justify-center relative">
+    <h3 class="text-center font-heading font-bold mb-10">Preguntas de investigación</h3>
+
+    <div class="w-full max-w-4xl space-y-8">
+      <div class="q-card">
+        ¿Cómo evolucionó la <span class="font-bold text-rose-300">producción</span> de think tanks entre 2019–2023? (volumen, frecuencia)
+      </div>
+
+      <div class="q-card">
+        ¿Qué <span class="font-bold text-amber-300">temas</span> dominaron y cómo cambiaron? (agenda temática)
+      </div>
+
+      <div class="q-card">
+        ¿Convergieron o <span class="font-bold text-emerald-300">divergieron</span> semánticamente? (lenguajes compartidos vs. fragmentación)
+      </div>
+
+      <div class="q-card">
+        ¿Qué nos dicen estos patrones sobre cómo se organiza la
+        <span class="font-bold text-indigo-300">expertise</span> durante transformación institucional en Chile?
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: encendido secuencial cada 5s, mantiene encendidas; la última más brillante -->
+  <script>
+    (function(){
+      const slide = document.getElementById('slide4');
+      if(!slide) return;
+      const cards = slide.querySelectorAll('.q-card');
+      const STEP_MS = 4000;  // 5 segundos
+      let started = false;
+
+      function runOnce(){
+        if(started) return;
+        started = true;
+        let i = 0;
+        function step(){
+          if(i < cards.length){
+            cards[i].classList.add('is-on');
+            if(i === cards.length - 1){
+              cards[i].classList.add('is-main');
+            }
+            i++;
+            setTimeout(step, STEP_MS);
+          }
+        }
+        step();
+      }
+
+      // Dispara cuando la slide entra al viewport (y no repite)
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) runOnce(); });
+      }, { threshold: 0.45 });
+      io.observe(slide);
+    })();
+  </script>
+</div>
+
+
+<!-- Slide 5: Datos y métodos (ensanchado/alto extra) -->
+<div id="slide5" class="slide" style="left: 400vw;">
+  <style>
+    /* Solo slide 5: más espacio para la columna del embed en pantallas grandes */
+    @media (min-width: 1024px){
+      #slide5 .grid-wider{
+        display: grid;
+        grid-template-columns: 66% 34%; /* antes 62/38 */
+        gap: 1.618rem;
+        height: 100%;
+      }
+    }
+    @media (max-width: 1023.98px){
+      #slide5 .grid-wider{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        height: 100%;
+      }
+    }
+  </style>
+
+  <div class="grid-wider h-full">
+    <!-- Columna izquierda (embed) -->
+    <div class="flex h-full items-center">
+      <div class="w-full max-w-[1280px] mx-auto">
+        <!-- Marco del embed -->
+        <div class="embed-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_14px_40px_rgba(0,0,0,.35)]">
+          <iframe
+            class="embed-frame block w-full h-[76vh] md:h-[74vh] lg:h-[90vh] min-h-[560px]"
+            src="https://rodrigomolinaavila.github.io/histogramas-thinktank/"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha (texto) -->
+    <div class="flex flex-col justify-center px-4">
+      <h3 class="text-3xl md:text-4xl font-heading font-bold mb-6">Datos y métodos</h3>
+
+      <div class="space-y-5">
+        <div class="flex items-start">
+          <div class="w-10 h-10 rounded-full bg-blue-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+            <i class="fas fa-database text-slate-900"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-medium">24 think tanks estudiados</h4>
+            <p class="opacity-80">
+                <span class="inline-block px-3 py-1 rounded-md bg-amber-900/20 border border-amber-300/30 text-amber-300 font-semibold">
+                    17,418 intervenciones en el periodo de enero 2019 a diciembre 2023
+                </span>
+            </p>
+            <p class="opacity-80">Boletines, editoriales, cartas al director, columnas, libros, conferencias, publicaciones académicas</p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="w-10 h-10 rounded-full bg-purple-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+            <i class="fas fa-layer-group text-slate-900"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-medium">Niveles de análisis</h4>
+            <ul class="list-disc pl-5 mt-2 space-y-1">
+              <li><span class="font-medium text-blue-300">Nivel 1:</span> Volumen de publicaciones y análisis descriptivo temporal</li>
+              <li><span class="font-medium text-yellow-300">Nivel 2:</span> Análisis semántico transfer learning (SBERT &amp; BERTopic) para Think Tank</li>
+              <li><span class="font-medium text-pink-300">Nivel 3:</span> Zoom-in Resultados Bert - Clustering por topicos predominantes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="data-card">
+            <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-pink-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                    <i class="fas fa-lightbulb text-slate-900"></i>
+                </div>
+                <div>
+                    <p>"El corpus, con sus limitaciones, es un proxy importante de la producción de intervenciones de 'opinión' y generación de evidencia 'experta' en políticas públicas en Chile"</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Slide 6: Webscraping (centrado, consideraciones a la izquierda, ajuste a viewport) -->
+<div id="slide6" class="slide" style="left: 500vw;">
+  <style>
+    /* ==== Estilos específicos slide 6 ==== */
+    #slide6 .title-xl{ font-size: clamp(2.25rem, 2.2vw + 1.6rem, 3.1rem); line-height: 1.15; }
+    #slide6 .section-title{ font-size: clamp(1.35rem, 1.1vw + 1rem, 1.8rem); }
+
+    #slide6 .card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    /* Dos columnas 58/42 en pantallas grandes */
+    #slide6 .twocol{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 1024px){
+      #slide6 .twocol{
+        grid-template-columns: 58% 42%;
+        gap: 1rem;
+      }
+    }
+
+    /* Altura total útil de la zona de tarjetas (para que todo quepa en viewport). */
+    #slide6 .stack-fit{
+      /* 100vh menos padding superior/inferior del slide y el título */
+      max-height: calc(100vh - 190px);
+      display: flex; flex-direction: column; gap: 1rem;
+      overflow: hidden; /* hijos manejan su propio scroll si es necesario */
+    }
+    #slide6 .scrollable{
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    /* Pipeline */
+    #slide6 .pipeline-icon{ height: 70px; width: auto; object-fit: contain; filter: drop-shadow(0 3px 8px rgba(0,0,0,.35)); }
+    @media(min-width: 1024px){ #slide6 .pipeline-icon{ height: 82px; } }
+    #slide6 .arrow{ opacity:.9; filter: drop-shadow(0 0 8px rgba(148,163,184,.25)); }
+
+    /* Logos think tanks */
+    #slide6 .tt-cell{
+      height: 86px;
+      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.02);
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+    #slide6 .tt-cell:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 26px -8px rgba(0,0,0,.45);
+    }
+    #slide6 .tt-logo{
+      max-height: 64px; max-width: 100%; object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+    }
+    @media(min-width:1024px){ #slide6 .tt-logo{ max-height: 70px; } }
+
+    /* Botón GitHub */
+    #slide6 .gh-button{
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    #slide6 .gh-button:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.28);
+      box-shadow:0 12px 28px -10px rgba(0,0,0,.5);
+    }
+  </style>
+
+  <div class="container mx-auto h-full flex flex-col py-10">
+    <!-- título centrado -->
+    <h3 class="title-xl font-heading font-extrabold mb-6 text-center">Webscraping</h3>
+
+    <div class="twocol">
+      <!-- ===== IZQUIERDA: LOGOS + CONSIDERACIONES (en una sola tarjeta con scroll si es necesario) ===== -->
+      <section class="card stack-fit">
+        <div class="scrollable">
+          <h4 class="section-title font-heading font-semibold mb-4">Fuentes principales (24 think tanks)</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 mb-5">
+            <!-- 24 logos -->
+            <div class="tt-cell" title="CDC"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/cdc.png" alt="CDC"></div>
+            <div class="tt-cell" title="CED"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ced.png" alt="CED"></div>
+            <div class="tt-cell" title="CEP"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/cep.svg" alt="CEP"></div>
+            <div class="tt-cell" title="CLAPES UC"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/clapesuc.webp" alt="CLAPES UC"></div>
+            <div class="tt-cell" title="Casa Común"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/casacomun.jpg" alt="Casa Común"></div>
+            <div class="tt-cell" title="Chile 21"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/chile21.svg" alt="Chile 21"></div>
+            <div class="tt-cell" title="Espacio Público"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/espaciopublico.png" alt="Espacio Público"></div>
+            <div class="tt-cell" title="FPP"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fpp.png" alt="FPP"></div>
+            <div class="tt-cell" title="Fundación Jaime Guzmán"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fundacionjaimeguzman.png" alt="Fundación Jaime Guzmán"></div>
+            <div class="tt-cell" title="Fundación Sol"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/fundacionsol.png" alt="Fundación Sol"></div>
+            <div class="tt-cell" title="Horizontal"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/horizontal.svg" alt="Horizontal"></div>
+            <div class="tt-cell" title="Horizonte Ciudadano"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/horizonteciudadano.svg" alt="Horizonte Ciudadano"></div>
+            <div class="tt-cell" title="ICAL"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ical.png" alt="ICAL"></div>
+            <div class="tt-cell" title="IES"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ies.webp" alt="IES"></div>
+            <div class="tt-cell" title="Idea País"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ideapais.png" alt="Idea País"></div>
+            <div class="tt-cell" title="Ideas Republicanas"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/ideasrepublicanas.png" alt="Ideas Republicanas"></div>
+            <div class="tt-cell" title="Instituto Igualdad"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutoigualdad.png" alt="Instituto Igualdad"></div>
+            <div class="tt-cell" title="Instituto Libertad"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutolibertad.png" alt="Instituto Libertad"></div>
+            <div class="tt-cell" title="Instituto Res Pública"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/institutorespublica.png" alt="Instituto Res Pública"></div>
+            <div class="tt-cell" title="LyD"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/lyd1536x1299.png" alt="LyD"></div>
+            <div class="tt-cell" title="Nodo XXI"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/nodoxxi.webp" alt="Nodo XXI"></div>
+            <div class="tt-cell" title="OPES"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/opes.webp" alt="OPES"></div>
+            <div class="tt-cell" title="Pivotes"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/pivotes.png" alt="Pivotes"></div>
+            <div class="tt-cell" title="Signos Uandes"><img class="tt-logo" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/signosuandes.svg" alt="Signos Uandes"></div>
+          </div>
+
+          <!-- Consideraciones (se usa espacio inferior de la tarjeta izquierda) -->
+          <div class="mt-2">
+            <h5 class="font-heading font-medium text-blue-300 mb-2">Consideraciones</h5>
+            <ul class="list-disc pl-5 space-y-1 text-base opacity-90">
+              <li style="background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(255,215,0,0.1)); padding: 0.5rem; border-radius: 0.25rem;">
+                La información extraida corresponde a lo exclusivamente publicado por los mismos think tanks en su página web
+              </li>
+              <li style="background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(255,215,0,0.1)); padding: 0.5rem; border-radius: 0.25rem;">
+                Por lo tanto, se asume que no es "toda" la producción del think tank
+              </li>
+              <li>Extracción de toda la información disponible dentro de la página: Titulo de la publicacion, autor, medio de comunicación, fecha de publicación, enlace de la publicación</li>
+              <li>Teóricamente, estamos hablando de un corpus que sintetiza, con sus limitaciones, el conocimiento experto en políticas públicas en Chile desde organizaciones híbridas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DERECHA: PIPELINE + REPROD ===== -->
+      <div class="stack-fit">
+        <!-- Pipeline (auto, no scroll) -->
+        <section class="card">
+          <h4 class="section-title font-heading font-semibold mb-3">Pipeline de scraping</h4>
+          <div class="w-full flex items-center justify-center gap-4 md:gap-6 lg:gap-8 py-3">
+            <img class="pipeline-icon" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/py.png" alt="Python">
+            <i class="fa-solid fa-arrow-right-long text-slate-200 text-2xl md:text-3xl arrow"></i>
+            <img class="pipeline-icon" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/selenium.png" alt="Selenium">
+            <i class="fa-solid fa-arrow-right-long text-slate-200 text-2xl md:text-3xl arrow"></i>
+            <img class="pipeline-icon" src="https://raw.githubusercontent.com/RodrigoMolinaAvila/web_resources/refs/heads/main/webresources/presentacion-coes/beautfulsoup.png" alt="BeautifulSoup">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+            <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+              <h5 class="font-heading font-medium mb-1 text-blue-300">Python</h5>
+              <p class="text-sm leading-relaxed opacity-90">Lenguaje y motor para la extracción de datos. Utilizado en VSCode</p>
+            </div>
+            <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+              <h5 class="font-heading font-medium mb-1 text-emerald-300">Selenium</h5>
+              <p class="text-sm leading-relaxed opacity-90">Libreria en python, utilizado para imitar interacción humana dentro de las páginas web para obtener la extracción de información</p>
+            </div>
+            <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+              <h5 class="font-heading font-medium mb-1 text-amber-300">BeautifulSoup</h5>
+              <p class="text-sm leading-relaxed opacity-90">Libreria en python, utilizado para extracción de información en la estructura del codigo HTML de la página web</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reproducibilidad (scroll si hace falta) -->
+        <section class="card scrollable">
+          <h4 class="section-title font-heading font-semibold mb-4">Reproducibilidad & Open Science</h4>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-slate-900/70 rounded-xl border border-white/10">
+              <i class="fab fa-github text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <p class="opacity-90 mb-3">Código, notebooks y organización del proyecto:</p>
+              <a class="gh-button inline-flex items-center gap-3 px-4 py-2 rounded-xl"
+                 href="https://github.com/RodrigoMolinaAvila/minicoesfondap-1523A0005" target="_blank" rel="noopener">
+                <i class="fab fa-github text-xl"></i>
+                <span class="font-medium">RodrigoMolinaAvila/minicoesfondap-1523A0005</span>
+              </a>
+
+              <div class="mt-4">
+                <h5 class="font-heading font-medium text-emerald-300 mb-1.5">Acceso a la base de datos</h5>
+                <p class="text-sm opacity-90">
+                  Para acceso al dataset consolidado, contactar a
+                  <a href="mailto:rodmolina@ug.uchile.cl" class="underline decoration-dotted hover:opacity-100 opacity-90">
+                    rodmolina@ug.uchile.cl
+                  </a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 7: Nivel 1 (con embed) -->
+<div id="slide7" class="slide" style="left: 600vw;">
+  <style>
+    /* === Estilos específicos del embed en slide 7 === */
+    #slide7 .embed-card{
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    #slide7 .embed-card::before{
+      content:"";
+      position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+      /* viñeta + línea interna sutil */
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.06),
+        inset 0 20px 40px rgba(0,0,0,0.35);
+    }
+    #slide7 .embed-frame{
+      display:block;
+      width:100%;
+      height:100%;
+      border:0;
+      /* por si la página embebida usa fondo claro, mantenemos continuidad cromática */
+      background:#0b1220;
+    }
+    /* en pantallas pequeñas dejamos que el alto se reduzca con la celda */
+    @media (max-width:1024px){
+      #slide7 .embed-card{ min-height: 50vh; }
+    }
+  </style>
+
+  <div class="golden-grid h-full">
+    <!-- IZQUIERDA: página embebida (ocupa toda la celda) -->
+    <div class="p-4">
+      <div class="embed-card">
+        <iframe
+          class="embed-frame"
+          src="https://rodrigomolinaavila.github.io/densidad-thinktank/"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          allowfullscreen
+          title="Densidad por orientación política — demo"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- DERECHA: texto explicativo (se mantiene igual que tenías) -->
+    <div class="flex flex-col justify-center px-4">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full mb-4">
+        <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+        <h3 class="text-2xl font-heading font-bold">Nivel 1: Densidad por orientación política</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+          <h4 class="text-xl font-medium mb-2 text-blue-300">Evolución temporal</h4>
+          <p>Análisis del volumen de publicaciones según la orientación política de los think tanks durante el período 2019-2023.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+            <h4 class="text-lg font-medium mb-1 text-emerald-300">Periodos clave</h4>
+            <ul class="text-sm space-y-1">
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>Estallido social (2019)</li>
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-400 inline-block"></span>Pandemia COVID-19 (2020-2021)</li>
+              <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400 inline-block"></span>Proceso constituyente (2021-2022)</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+            <h4 class="text-lg font-medium mb-1 text-purple-300">Orientaciones políticas</h4>
+            <ul class="text-sm space-y-1">
+              <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-blue-400 inline-block"></span>Centro derecha</li>
+              <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-rose-400 inline-block"></span>Izquierda</li>
+              <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-emerald-400 inline-block"></span>Centro</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
+          <h4 class="text-lg font-medium mb-1 text-amber-300">Hallazgo inicial</h4>
+          <p>Picos de publicación coinciden con eventos políticos relevantes en Chile, con variaciones según la orientación del think tank.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Slide 8: Nivel 2 (BERTopic + SBERT) -->
+<div id="slide8" class="slide" style="left: 700vw;">
+  <div class="container mx-auto h-full flex flex-col py-10">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full mb-2">
+        <div class="w-3 h-3 rounded-full bg-purple-400"></div>
+        <h3 class="text-3xl font-heading font-bold">Nivel 2: NLP (BERTopic + SBERT)</h3>
+      </div>
+      <p class="text-lg max-w-2xl mx-auto">
+        Análisis temático y semántico de las intervenciones mediante modelos de lenguaje avanzados
+      </p>
+    </div>
+
+    <!-- Grilla: izquierda texto / derecha UMAP3D -->
+    <!-- h-[72vh] le da altura útil a la grilla; min-h-0 evita que el overflow comprima hijos. -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow min-h-0 h-[72vh]">
+
+      <!-- Columna izquierda (texto) -->
+      <div class="data-card flex flex-col md:col-span-1 overflow-auto">
+        <h4 class="text-xl font-heading font-semibold mb-4 text-blue-300">Nivel 2 (guía breve)</h4>
+
+        <div class="mb-6">
+          <h5 class="text-lg font-semibold text-purple-300 mb-2">¿Qué es (BERTopic + SBERT)?</h5>
+          <p class="text-sm opacity-90 leading-relaxed">
+            BERTopic agrupa documentos en tópicos usando representaciones semánticas de frases generadas por SBERT.
+            Permite extraer temas coherentes y su evolución temporal con alta granularidad semántica.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h5 class="text-lg font-semibold text-emerald-300 mb-2">Modelos</h5>
+          <ul class="text-sm opacity-90 space-y-1 list-disc pl-5">
+            <li>SBERT para embeddings (p. ej., <code>paraphrase-multilingual-mpnet-base-v2</code>).</li>
+            <li>UMAP para reducción de dimensión y proyección visual.</li>
+            <li>HDBSCAN para clustering robusto sin fijar K.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-lg font-semibold text-amber-300 mb-2">En los datos</h5>
+          <ul class="text-sm opacity-90 space-y-1 list-disc pl-5">
+            <li>Normalización, tokenización y limpieza de ruido.</li>
+            <li>Exploración de densidad y vecinos cercanos en el espacio semántico.</li>
+            <li>Validación manual de etiquetas de tópicos clave.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Columna derecha (UMAP3D embebido, ocupa 2/3) -->
+      <!-- flex items-stretch + h-full garantizan que el iframe crezca a todo el panel -->
+      <div class="data-card md:col-span-2 p-0 overflow-hidden flex items-stretch h-full">
+        <iframe
+          class="block w-full h-full"
+          src="https://rodrigomolinaavila.github.io/umap3d-thinktank/"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          allowfullscreen
+          title="UMAP 3D Think Tanks"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 9: Demo BERTopic (título centrado) -->
+<div id="slide9" class="slide" style="left: 800vw;">
+  <style>
+    /* Estilos específicos para la slide 9 */
+    #slide9 .center-wrap{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center; /* centra vertical y horizontalmente */
+    }
+    #slide9 .big-title{
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 800;
+      text-align: center;
+      font-size: clamp(2.8rem, 6vw, 6rem); /* grande y fluido */
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      background-image: linear-gradient(45deg, #e5edff, #c7d2fe, #a5b4fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 8px 28px rgba(60, 110, 255, 0.25)); /* sutil glow */
+    }
+  </style>
+
+  <div class="center-wrap">
+    <h1 class="big-title">Demo BERTopic: Tópicos</h1>
+  </div>
+</div>
+
+        <!-- Slide 10: Implicancias -->
+        <div id="slide10" class="slide" style="left: 900vw;">
+            <div class="container mx-auto h-full flex flex-col py-10">
+                <h3 class="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Implicancias metodológicas</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-4 text-amber-300">Consideraciones técnicas</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-amber-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-sliders-h text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Hiperparámetros</h5>
+                                    <p class="text-sm opacity-90">Selección óptima requiere pruebas iterativas (BERTopic, UMAP, HDBSCAN)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-amber-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-ban text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Stopwords personalizadas</h5>
+                                    <p class="text-sm opacity-90">Vocabulario específico del contexto chileno y político</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-amber-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-key text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Acceso a datos</h5>
+                                    <p class="text-sm opacity-90">Limitaciones en contenido protegido o eliminado</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h4 class="text-xl font-heading font-semibold mb-4 text-purple-300">Desafíos interpretativos</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-purple-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-tags text-purple-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Etiquetado de temas</h5>
+                                    <p class="text-sm opacity-90">Validación manual necesaria para nombres de tópicos</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-purple-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-exchange-alt text-purple-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Cambio semántico</h5>
+                                    <p class="text-sm opacity-90">Las palabras pueden cambiar de significado en diferentes contextos políticos</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-purple-300/20 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-balance-scale text-purple-300"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-1">Sesgos en modelos</h5>
+                                    <p class="text-sm opacity-90">Los modelos multilingües pueden tener sesgos culturales y lingüísticos</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="data-card md:col-span-2">
+                        <h4 class="text-xl font-heading font-semibold mb-4 text-blue-300">Recomendaciones</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-slate-900/50 p-4 rounded-lg">
+                                <div class="text-4xl text-center text-blue-300 mb-2">1</div>
+                                <p class="text-center text-sm">Validación constante con expertos en políticas chilenas</p>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-lg">
+                                <div class="text-4xl text-center text-blue-300 mb-2">2</div>
+                                <p class="text-center text-sm">Análisis comparativo de múltiples configuraciones de modelos</p>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-lg">
+                                <div class="text-4xl text-center text-blue-300 mb-2">3</div>
+                                <p class="text-center text-sm">Documentación transparente de limitaciones metodológicas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Conclusiones -->
+        <div id="slide11" class="slide" style="left: 1000vw;">
+            <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1627556704302-624286d60a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover;"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-sky-900/40 to-indigo-900/70"></div>
+            <div class="container mx-auto h-full flex flex-col items-center justify-center relative z-10 py-16">
+                <h3 class="text-4xl md:text-5xl font-heading font-bold mb-8 text-center">Conclusiones</h3>
+                
+                <div class="max-w-4xl w-full space-y-6 backdrop-blur-sm bg-slate-800/50 rounded-3xl p-8 border border-slate-600/30">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-blue-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">1</span>
+                        </div>
+                        <p class="text-xl">Los think tanks chilenos muestran patrones claros en la capacidad de producir intervenciones: financiamiento basal, orientación hacia el producción de opinión, tendencia hacia derecha, se correlacionan con más capacidad. </span> de cambios en la producción de conocimiento experto durante periodos de turbulencia institucional.</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-amber-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">2</span>
+                        </div>
+                        <p class="text-xl">El modelo muestra sensibilidad a momentos críticos (e.g., Covid) y por lo mismo muestra patrones diferenciados de “reacción” (plurinacionalidad).</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-emerald-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">3</span>
+                        </div>
+                        <p class="text-xl">3. Existe un cluster central de los think tanks (no hablan tan distinto), con subclusters Signos Uandes, Fundación Sol y de “centro tecnocrático/económico” (e.g., Horizontal, CEP, Espacio Público, LyD).</span> creciente que refleja la fragmentación del debate público en Chile, con divergencias en los enfoques semánticos.</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-rose-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">4</span>
+                        </div>
+                        <p class="text-xl">La <span class="font-bold text-rose-300">infraestructura intelectual</span> chilena muestra alta concentración de recursos y acceso desigual a plataformas de difusión, condicionando la producción de conocimiento experto.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-rose-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">5</span>
+                        </div>
+                        <p class="text-xl">Además, la derecha tiene más amplitud de tópicos (más outliers).</p>
+
+                    </div>
+  <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-rose-300 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                            <span class="text-slate-900 font-bold text-xl">6</span>
+                        </div>
+                        <p class="text-xl">Consecuencias para quién puede hablar desde este espacio intersticial.</p>
+                    </div>                  
+                    
+                    <div class="text-center mt-10">
+                        <a href="#" class="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-heading font-bold text-lg px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500/30">
+                            Gracias!
+                        </a>
+                        <p class="mt-4 text-sm opacity-80">Presentación diseñada por: Rodrigo Molina Ávila</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide Indicator -->
+    <div class="slide-indicator">
+        <!-- Indicator nodes will be generated by JS -->
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button id="prev-btn" class="nav-btn">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button id="next-btn" class="nav-btn">
+            <i class="fas fa-arrow-down"></i>
+        </button>
+    </div>
+    
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip invisible"></div>
+
     <script>
-        feather.replace();
+        // Initialize D3 color scheme
+        const colors = d3.schemePastel1;
+        
+        // Initialize presentation variables
+        let currentSlide = 0;
+        const totalSlides = 11;
+        const slides = Array.from({length: totalSlides}, (_, i) => document.getElementById(`slide${i+1}`));
+        
+        // Create slide indicator nodes
+        const indicatorContainer = document.querySelector('.slide-indicator');
+        for (let i = 0; i < totalSlides; i++) {
+            const node = document.createElement('div');
+            node.className = 'indicator-node';
+            node.dataset.slide = i;
+            indicatorContainer.appendChild(node);
+        }
+        
+        // Update slide position
+        function updateSlidePosition() {
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(${-currentSlide * 100}vw)`;
+            });
+            
+            // Update indicator nodes
+            document.querySelectorAll('.indicator-node').forEach((node, index) => {
+                if (index === currentSlide) {
+                    node.classList.add('active');
+                } else {
+                    node.classList.remove('active');
+                }
+            });
+        }
+        
+        // Navigate to next slide
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlidePosition();
+            }
+        }
+        
+        // Navigate to previous slide
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlidePosition();
+            }
+        }
+        
+        // Event listeners for buttons
+        document.getElementById('next-btn').addEventListener('click', nextSlide);
+        document.getElementById('prev-btn').addEventListener('click', prevSlide);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Swipe support for touch devices
+        let touchStartX = 0;
+        let touchStartY = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+            
+            // Horizontal swipe
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            // Vertical swipe
+            else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 50) {
+                if (diffY > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+        
+        // Initialize slide position
+        updateSlidePosition();
+    
+
     </script>
 </body>
 </html>
